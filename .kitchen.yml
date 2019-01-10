@@ -38,17 +38,17 @@ suites:
           backend: local
     provisioner:
       name: terraform
-  # - name: "advanced"
-  #   driver:
-  #     name: "terraform"
-  #     command_timeout: 1800
-  #     root_module_directory: examples/advanced
-  #     variable_files:
-  #       - test/fixtures/advanced/terraform.tfvars
-  #   verifier:
-  #     name: terraform
-  #     systems:
-  #       - name: advanced
-  #         backend: local
-  #   provisioner:
-  #     name: terraform
+  - name: "advanced"
+    driver:
+      name: "terraform"
+      command_timeout: 1800
+      root_module_directory: examples/advanced
+      variable_files:
+        - test/fixtures/advanced/terraform.tfvars
+    verifier:
+      name: terraform
+      systems:
+        - name: advanced
+          backend: local
+    provisioner:
+      name: terraform

@@ -34,7 +34,7 @@ variable "min_ports_per_vm" {
 
 variable "name" {
   description = "(Optional) Defaults to 'cloud-nat-RANDOM_SUFFIX'. Changing this forces a new NAT to be created."
-  default = "false"
+  default = ""
 }
 
 variable "nat_ip_allocate_option" {
@@ -54,6 +54,10 @@ variable "router" {
 variable "source_subnetwork_ip_ranges_to_nat" {
   description = "(Optional) Defaults to ALL_SUBNETWORKS_ALL_IP_RANGES. How NAT should be configured per Subnetwork. Valid values include: ALL_SUBNETWORKS_ALL_IP_RANGES, ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, LIST_OF_SUBNETWORKS. Changing this forces a new NAT to be created."
   default = "ALL_SUBNETWORKS_ALL_IP_RANGES"
+}
+
+variable "subnetwork_self_link" {
+  description = "debugging"
 }
 
 variable "subnetwork_self_links" {
