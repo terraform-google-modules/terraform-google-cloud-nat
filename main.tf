@@ -21,12 +21,12 @@ resource "random_string" "name_suffix" {
 }
 
 locals {
-  // Variable mutations
-  nat_ips_length = "${length(var.nat_ips)}"
+  # Variable mutations
   default_name = "cloud-nat-${random_string.name_suffix.result}"
+  nat_ips_length = "${length(var.nat_ips)}"
   default_nat_ip_allocate_option = "${local.nat_ips_length > 0 ? "MANUAL_ONLY" : "AUTO_ONLY" }"
 
-  // Module mutated variables
+  # Module mutated variables
   nat_ip_allocate_option = "${var.nat_ip_allocate_option ? var.nat_ip_allocate_option : local.default_nat_ip_allocate_option}"
   name = "${var.name != "" ? var.name : local.default_name}"
 }
@@ -39,13 +39,8 @@ resource "google_compute_router_nat" "main" {
   router = "${var.router}"
   nat_ip_allocate_option = "${local.nat_ip_allocate_option}"
   source_subnetwork_ip_ranges_to_nat = "${var.source_subnetwork_ip_ranges_to_nat}"
-  nat_ips = "${var.nat_ips}"
 
-  subnetwork = [
-    {
-      name = "${var.subnetwork_self_link}"
-    }
-  ]
+  nat_ips = "${var.nat_ips}"
 
   min_ports_per_vm = "${var.min_ports_per_vm}"
   udp_idle_timeout_sec = "${var.udp_idle_timeout_sec}"

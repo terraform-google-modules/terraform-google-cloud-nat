@@ -32,8 +32,8 @@ control "gcloud" do
     end
 
     describe "nat" do
-      it "generated a NAT name" do
-        expect(data["name"]).to match(/^cloud-nat-...../)
+      it "did not generate a NAT name" do
+        expect(data["name"]).not_to match(/^cloud-nat-...../)
       end
 
       it "set IP allocation to auto" do
@@ -44,24 +44,24 @@ control "gcloud" do
         expect(data["sourceSubnetworkIpRangesToNat"]).to eq("ALL_SUBNETWORKS_ALL_IP_RANGES")
       end
 
-      it "sets the ICMP idle timeout to 30 seconds" do
-        expect(data["icmpIdleTimeoutSec"]).to eq(30)
+      it "sets the ICMP idle timeout to 15 seconds" do
+        expect(data["icmpIdleTimeoutSec"]).to eq(15)
       end
 
-      it "sets the minimum ports per VM to 64" do
-        expect(data["minPortsPerVm"]).to eq(64)
+      it "sets the minimum ports per VM to 128" do
+        expect(data["minPortsPerVm"]).to eq(128)
       end
 
-      it "sets the TCP established idle timeout to 1200 seconds" do
-        expect(data["tcpEstablishedIdleTimeoutSec"]).to eq(1200)
+      it "sets the TCP established idle timeout to 600 seconds" do
+        expect(data["tcpEstablishedIdleTimeoutSec"]).to eq(600)
       end
 
-      it "sets the TCP transitory idle timeout to 30 seconds" do
-        expect(data["tcpTransitoryIdleTimeoutSec"]).to eq(30)
+      it "sets the TCP transitory idle timeout to 15 seconds" do
+        expect(data["tcpTransitoryIdleTimeoutSec"]).to eq(15)
       end
 
-      it "sets the UDP idle timeout to 30 seconds" do
-        expect(data["udpIdleTimeoutSec"]).to eq(30)
+      it "sets the UDP idle timeout to 15 seconds" do
+        expect(data["udpIdleTimeoutSec"]).to eq(15)
       end
     end
   end

@@ -56,10 +56,6 @@ variable "source_subnetwork_ip_ranges_to_nat" {
   default = "ALL_SUBNETWORKS_ALL_IP_RANGES"
 }
 
-variable "subnetwork_self_link" {
-  description = "debugging"
-}
-
 variable "subnetwork_self_links" {
   description = "(Optional) List of subnetwork self-links strings, mutated to subnetwork map. Merges with subnetworks."
   type = "list"
