@@ -15,9 +15,9 @@
  */
 
 module "cloud-nat" {
-	source     = "../../"
-	project_id = "${var.project_id}"
-	region     = "${var.region}"
+  source     = "../../"
+  project_id = "${var.project_id}"
+  region     = "${var.region}"
   router     = "${google_compute_router.router.name}"
   name       = "my-cloud-nat-${random_string.suffix.result}"
 
