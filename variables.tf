@@ -57,18 +57,6 @@ variable "source_subnetwork_ip_ranges_to_nat" {
   default = "ALL_SUBNETWORKS_ALL_IP_RANGES"
 }
 
-variable "subnetwork_self_links" {
-  description = "(Optional) List of subnetwork self-links strings, mutated to subnetwork map. Merges with subnetworks."
-  type = "list"
-  default = []
-}
-
-variable "subnetworks" {
-  description = "(Optional) Passes through to provider subnetwork. List of subnetworks maps. Merges with subnetworks_self_links"
-  type = "list"
-  default = []
-}
-
 variable "tcp_established_idle_timeout_sec" {
   description = "(Optional) Timeout (in seconds) for TCP established connections. Defaults to 1200s if not set. Changing this forces a new NAT to be created."
   default = "1200"

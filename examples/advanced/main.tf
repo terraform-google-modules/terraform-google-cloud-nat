@@ -20,11 +20,7 @@ module "cloud-nat" {
   region     = "${var.region}"
   router     = "${google_compute_router.router.name}"
   name       = "my-cloud-nat-${random_string.suffix.result}"
-
-  nat_ips = "${google_compute_address.address.*.self_link}"
-
-  subnetwork_self_links = "${google_compute_subnetwork.subnetwork.*.self_link}"
-
+  nat_ips    = "${google_compute_address.address.*.self_link}"
   min_ports_per_vm = "128"
   icmp_idle_timeout_sec = "15"
   tcp_established_idle_timeout_sec = "600"
