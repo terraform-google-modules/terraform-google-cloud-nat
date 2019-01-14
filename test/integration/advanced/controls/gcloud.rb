@@ -36,8 +36,8 @@ control "gcloud" do
         expect(data["name"]).not_to match(/^cloud-nat-...../)
       end
 
-      it "set IP allocation to auto" do
-        expect(data["natIpAllocateOption"]).to eq("AUTO_ONLY")
+      it "set IP allocation to manual" do
+        expect(data["natIpAllocateOption"]).to eq("MANUAL_ONLY")
       end
 
       it "set subnet IP ranges to all subnets, all IP ranges" do
