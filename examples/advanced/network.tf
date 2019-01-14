@@ -28,7 +28,7 @@ provider "google" {
 
 resource "google_compute_address" "address" {
   count  = 2
-  name   = "nat-external-address-${count.index}"
+  name   = "nat-external-address-${count.index}-${random_string.suffix.result}"
   region = "${var.region}"
 }
 

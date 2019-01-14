@@ -44,6 +44,7 @@ variable "nat_ip_allocate_option" {
 
 variable "nat_ips" {
   description = "(Optional) List of self_links of external IPs. Changing this forces a new NAT to be created."
+  type = "list"
   default = []
 }
 
