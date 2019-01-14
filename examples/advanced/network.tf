@@ -38,10 +38,11 @@ resource "google_compute_network" "network" {
 }
 
 resource "google_compute_subnetwork" "subnetwork" {
-  name          = "cft-cloud-nat-test-${random_string.suffix.result}"
+  count         = 2
+  name          = "cft-cloud-nat-test-${count.index}-${random_string.suffix.result}"
   region        = "${var.region}"
   network       = "${google_compute_network.network.self_link}"
-  ip_cidr_range = "10.0.0.0/16"
+  ip_cidr_range = "10.${count.index}.0.0/16"
 }
 
 resource "google_compute_router" "router" {

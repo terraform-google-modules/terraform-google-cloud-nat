@@ -20,6 +20,14 @@ resource "random_string" "name_suffix" {
   special = false
 }
 
+resource "null_resource" "subnetwork_self_links_map" {
+  count = "${length(var.subnetwork_self_links)}"
+
+  triggers {
+    name = "${var.subnetwork_self_links[count.index]}"
+  }
+}
+
 locals {
   # Variable mutations
   default_name = "cloud-nat-${random_string.name_suffix.result}"
@@ -41,6 +49,16 @@ resource "google_compute_router_nat" "main" {
   source_subnetwork_ip_ranges_to_nat = "${var.source_subnetwork_ip_ranges_to_nat}"
 
   nat_ips = ["${var.nat_ips}"]
+
+  # subnetwork is a inline block. List of maps.
+  # Error: module.cloud-nat.google_compute_router_nat.main: subnetwork: should be a list
+  subnetwork = "${null_resource.subnetwork_self_links_map.*.triggers}"
+
+  # Error: module.cloud-nat.google_compute_router_nat.main: subnetwork: should be a list
+  #subnetwork = "${concat(list(), null_resource.subnetwork_self_links_map.*.triggers)}"
+
+  # Error: module.cloud-nat.google_compute_router_nat.main: "subnetwork.0.name": required field is not set
+  # subnetwork = ["${null_resource.subnetwork_self_links_map.*.triggers}"]
 
   min_ports_per_vm = "${var.min_ports_per_vm}"
   udp_idle_timeout_sec = "${var.udp_idle_timeout_sec}"
