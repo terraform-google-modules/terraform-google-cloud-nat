@@ -14,9 +14,28 @@
  * limitations under the License.
  */
 
-module "cloud-nat" {
-	source     = "../../"
-	project_id = "${var.project_id}"
-	region     = "${var.region}"
-  router     = "${var.router}"
+locals {
+  credentials_path = "${path.module}/${var.credentials_path}"
+}
+
+provider "google" {
+  credentials = "${file(local.credentials_path)}"
+  region      = "${var.region}"
+  project     = "${var.project_id}"
+}
+
+resource "random_string" "suffix" {
+  length  = 4
+  special = false
+  upper   = false
+}
+
+resource "google_compute_network" "main" {
+  name = "cloud-nat-network${random_string.suffix.result}"
+  auto_create_subnetworks = false
+}
+
+resource "google_compute_router" "main" {
+  name    = "cloud-nat-router${random_string.suffix.result}"
+  network = "${google_compute_network.main.name}"
 }

@@ -14,44 +14,42 @@
  * limitations under the License.
  */
 
+locals {
+  credentials_path = "${path.module}/${var.credentials_path}"
+}
+
+provider "google" {
+  credentials = "${file(local.credentials_path)}"
+  region      = "${var.region}"
+  project     = "${var.project_id}"
+}
+
 resource "random_string" "suffix" {
   length  = 4
   special = false
   upper   = false
 }
 
-provider "google" {
-  credentials = "${file(var.credentials_path)}"
-  region      = "${var.region}"
-  project     = "${var.project_id}"
+resource "google_compute_network" "main" {
+  name = "cloud-nat-network${random_string.suffix.result}"
+  auto_create_subnetworks = false
 }
 
-resource "google_compute_address" "address" {
-  count  = 2
-  name   = "nat-external-address-${count.index}-${random_string.suffix.result}"
-  region = "${var.region}"
-}
-
-resource "google_compute_network" "network" {
-  name                    = "cft-cloud-nat-test-${random_string.suffix.result}"
-  auto_create_subnetworks = "false"
+resource "google_compute_router" "main" {
+  name    = "cloud-nat-router${random_string.suffix.result}"
+  network = "${google_compute_network.main.name}"
 }
 
 resource "google_compute_subnetwork" "subnetwork-a" {
-  name          = "cft-cloud-nat-test-subnet-a-${random_string.suffix.result}"
+  name          = "cloud-nat-subnetwork-a${random_string.suffix.result}"
   region        = "${var.region}"
-  network       = "${google_compute_network.network.self_link}"
+  network       = "${google_compute_network.main.self_link}"
   ip_cidr_range = "10.0.0.0/16"
 }
 
 resource "google_compute_subnetwork" "subnetwork-b" {
-  name          = "cft-cloud-nat-test-subnet-b-${random_string.suffix.result}"
+  name          = "loud-nat-subnetwork-b${random_string.suffix.result}"
   region        = "${var.region}"
-  network       = "${google_compute_network.network.self_link}"
+  network       = "${google_compute_network.main.self_link}"
   ip_cidr_range = "10.1.0.0/16"
-}
-
-resource "google_compute_router" "router" {
-  name    = "cft-cloud-nat-test-${random_string.suffix.result}"
-  network = "${google_compute_network.network.self_link}"
 }

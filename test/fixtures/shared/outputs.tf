@@ -14,9 +14,15 @@
  * limitations under the License.
  */
 
-module "cloud-nat" {
-	source     = "../../"
-	project_id = "${var.project_id}"
-	region     = "${var.region}"
-  router     = "${var.router}"
+output "region" {
+  value = "${var.region}"
 }
+
+output "router_name" {
+  value = "${module.example.router_name}"
+}
+
+output "name" {
+  value = "${module.example.name}"
+}
+

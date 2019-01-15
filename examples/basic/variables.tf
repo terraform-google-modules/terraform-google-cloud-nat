@@ -25,3 +25,12 @@ variable "credentials_path" {
 variable "region" {
   description = "The region to deploy to"
 }
+
+variable "router" {
+  description = "The router name to NAT"
+}
+
+variable "name_suffix" {
+  description = "A suffix to append to the resource names"
+  default     = ""
+}

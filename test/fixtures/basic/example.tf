@@ -14,9 +14,12 @@
  * limitations under the License.
  */
 
-module "cloud-nat" {
-	source     = "../../"
-	project_id = "${var.project_id}"
-	region     = "${var.region}"
-  router     = "${var.router}"
+module "example" {
+  source = "../../../examples/basic"
+
+  project_id       = "${var.project_id}"
+  credentials_path = "${local.credentials_path}"
+  region           = "${var.region}"
+  name_suffix      = "-${random_string.suffix.result}"
+  router           = "${google_compute_router.main.name}"
 }

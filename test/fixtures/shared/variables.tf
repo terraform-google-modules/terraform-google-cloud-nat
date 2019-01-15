@@ -14,9 +14,14 @@
  * limitations under the License.
  */
 
-module "cloud-nat" {
-	source     = "../../"
-	project_id = "${var.project_id}"
-	region     = "${var.region}"
-  router     = "${var.router}"
+variable "project_id" {
+  description = "The GCP project to use for integration tests"
+}
+
+variable "credentials_path" {
+  description = "The relative path from the fixture directory to the GCP credentials file that will run Terraform tests"
+}
+
+variable "region" {
+  description = "The GCP region to create and test resources in"
 }
