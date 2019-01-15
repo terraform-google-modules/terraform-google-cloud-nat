@@ -1,6 +1,6 @@
 # Terraform Google Cloud NAT Module
 
-TODO: add desc
+This module handles opinionated Google Cloud Platform Cloud NAT creation and configuration.
 
 ## Usage
 

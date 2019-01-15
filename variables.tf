@@ -57,11 +57,6 @@ variable "source_subnetwork_ip_ranges_to_nat" {
   default = "ALL_SUBNETWORKS_ALL_IP_RANGES"
 }
 
-variable "subnetworks" {
-  description = "(Optional) One or more subnetwork NAT configurations. Only used if source_subnetwork_ip_ranges_to_nat is set to LIST_OF_SUBNETWORKS."
-  default = []
-}
-
 variable "tcp_established_idle_timeout_sec" {
   description = "(Optional) Timeout (in seconds) for TCP established connections. Defaults to 1200s if not set. Changing this forces a new NAT to be created."
   default = "1200"

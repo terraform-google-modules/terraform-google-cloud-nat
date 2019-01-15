@@ -26,13 +26,4 @@ module "cloud-nat" {
   tcp_established_idle_timeout_sec = "600"
   tcp_transitory_idle_timeout_sec = "15"
   udp_idle_timeout_sec = "15"
-  subnetworks = [
-    {
-      name = "${google_compute_subnetwork.subnetwork-a.self_link}"
-      source_ip_ranges_to_nat = "PRIMARY_IP_RANGE"
-    },
-    {
-      name = "${google_compute_subnetwork.subnetwork-b.self_link}"
-    }
-  ]
 }
