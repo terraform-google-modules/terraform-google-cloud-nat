@@ -7,7 +7,12 @@ TODO: add desc
 There are multiple examples included in the [examples](./examples/) folder but simple usage is as follows:
 
 ```hcl
-TODO: include examples/basic
+module "cloud-nat" {
+  source     = "terraform-google-modules/cloud-nat/google"
+  project_id = "${var.project_id}"
+  region     = "${var.region}"
+  router     = "${google_compute_router.router.name}"
+}
 ```
 
 Then perform the following commands on the root folder:
@@ -53,10 +58,8 @@ Before this module can be used on a project, you must ensure that the following 
 
 1. Terraform and kubectl are [installed](#software-dependencies) on the machine where Terraform is executed.
 2. The Service Account you execute the module with has the right [permissions](#iam-roles).
-3. The TODO (LIST_OF_APIS) APIs are [active](#enable-apis) on the project you will launch the cluster in.
+3. The APIs are [active](#enable-apis) on the project you will launch the cluster in.
 4. If you are using a Shared VPC, the APIs must also be activated on the Shared VPC host project and your service account needs the proper permissions there.
-
-The [project factory](https://github.com/terraform-google-modules/terraform-google-project-factory) can be used to provision projects with the correct APIs active and the necessary Shared VPC connections.
 
 ### Terraform plugins
 
@@ -68,13 +71,13 @@ The [project factory](https://github.com/terraform-google-modules/terraform-goog
 In order to execute this module you must have a Service Account with the
 following project roles:
 
-- TODO: add list of roles
+- [roles/compute.networkAdmin](https://cloud.google.com/nat/docs/using-nat#iam_permissions)
 
 ### Enable APIs
 
 In order to operate with the Service Account you must activate the following APIs on the project where the Service Account was created:
 
-- TODO: list of apis
+- Compute Engine API - compute.googleapis.com
 
 ## Install
 
