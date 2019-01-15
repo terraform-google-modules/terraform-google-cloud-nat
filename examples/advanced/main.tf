@@ -28,10 +28,11 @@ module "cloud-nat" {
   udp_idle_timeout_sec = "15"
   subnetworks = [
     {
+      #name = "https://www.googleapis.com/compute/v1/projects/pf-cory-1-4a4f/regions/us-east4/subnetworks/cft-cloud-nat-test-subnet-a-sha9"
       name = "${google_compute_subnetwork.subnetwork-a.self_link}"
-      source_ip_ranges_to_nat = "PRIMARY_IP_RANGE"
     },
     {
+      #name = "https://www.googleapis.com/compute/v1/projects/pf-cory-1-4a4f/regions/us-east4/subnetworks/cft-cloud-nat-test-subnet-b-sha9"
       name = "${google_compute_subnetwork.subnetwork-b.self_link}"
     }
   ]
