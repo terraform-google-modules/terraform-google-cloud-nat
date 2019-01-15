@@ -37,12 +37,18 @@ resource "google_compute_network" "network" {
   auto_create_subnetworks = "false"
 }
 
-resource "google_compute_subnetwork" "subnetwork" {
-  count         = 2
-  name          = "cft-cloud-nat-test-${count.index}-${random_string.suffix.result}"
+resource "google_compute_subnetwork" "subnetwork-a" {
+  name          = "cft-cloud-nat-test-subnet-a-${random_string.suffix.result}"
   region        = "${var.region}"
   network       = "${google_compute_network.network.self_link}"
-  ip_cidr_range = "10.${count.index}.0.0/16"
+  ip_cidr_range = "10.0.0.0/16"
+}
+
+resource "google_compute_subnetwork" "subnetwork-b" {
+  name          = "cft-cloud-nat-test-subnet-b-${random_string.suffix.result}"
+  region        = "${var.region}"
+  network       = "${google_compute_network.network.self_link}"
+  ip_cidr_range = "10.1.0.0/16"
 }
 
 resource "google_compute_router" "router" {
