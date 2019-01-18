@@ -8,3 +8,8 @@ project adheres to [Semantic Versioning](http://semver.org/).
 ## [Unreleased]
 
 ### Changed
+
+* Initial implementation of module
+* Autodetect IP allocation type
+* Autogenerate Cloud NAT name
+* basic and advanced examples w/ kitchen tests

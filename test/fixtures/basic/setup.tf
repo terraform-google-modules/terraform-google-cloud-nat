@@ -1,5 +1,5 @@
 /**
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -31,7 +31,7 @@ resource "random_string" "suffix" {
 }
 
 resource "google_compute_network" "main" {
-  name = "cloud-nat-network${random_string.suffix.result}"
+  name                    = "cloud-nat-network${random_string.suffix.result}"
   auto_create_subnetworks = false
 }
 

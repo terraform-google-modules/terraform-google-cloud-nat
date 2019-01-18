@@ -1,5 +1,5 @@
 /**
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,20 +16,20 @@
 
 output "name" {
   description = "Name of the Cloud NAT"
-  value = "${local.name}"
+  value       = "${local.name}"
 }
 
 output "nat_ip_allocate_option" {
   description = "NAT IP allocation mode"
-  value = "${local.nat_ip_allocate_option}"
+  value       = "${local.nat_ip_allocate_option}"
 }
 
 output "region" {
   description = "Cloud NAT region"
-  value = "${var.region}"
+  value       = "${var.region}"
 }
 
 output "router_name" {
   description = "Cloud NAT router name"
-  value = "${var.router}"
+  value       = "${var.router}"
 }

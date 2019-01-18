@@ -1,4 +1,4 @@
-# Copyright 2018 Google LLC
+# Copyright 2019 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -75,7 +75,6 @@ test_integration:
 	bundle install
 	bundle exec kitchen create
 	bundle exec kitchen converge
-	bundle exec kitchen converge
 	bundle exec kitchen verify
 	bundle exec kitchen destroy
 
@@ -114,7 +113,7 @@ docker_converge:
 		-e GOOGLE_APPLICATION_CREDENTIALS=${CREDENTIALS_PATH} \
 		-v $(CURDIR):/cft/workdir \
 		${DOCKER_REPO_BASE_KITCHEN_TERRAFORM} \
-		/bin/bash -c "kitchen converge && kitchen converge"
+		/bin/bash -c "kitchen converge"
 
 .PHONY: docker_verify
 docker_verify:

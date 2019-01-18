@@ -1,5 +1,5 @@
 /**
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,10 +23,9 @@ module "example" {
   name_suffix      = "-${random_string.suffix.result}"
   router           = "${google_compute_router.main.name}"
 
-  min_ports_per_vm = "128"
-  icmp_idle_timeout_sec = "15"
+  min_ports_per_vm                 = "128"
+  icmp_idle_timeout_sec            = "15"
   tcp_established_idle_timeout_sec = "600"
-  tcp_transitory_idle_timeout_sec = "15"
-  udp_idle_timeout_sec = "15"
+  tcp_transitory_idle_timeout_sec  = "15"
+  udp_idle_timeout_sec             = "15"
 }
-

@@ -63,7 +63,7 @@ Before this module can be used on a project, you must ensure that the following 
 
 ### Terraform plugins
 
-- [Terraform](https://www.terraform.io/downloads.html) 0.10.x
+- [Terraform](https://www.terraform.io/downloads.html) >= 0.10.x
 - [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) plugin v1.8.0
 
 ### Configure a Service Account
@@ -83,7 +83,7 @@ In order to operate with the Service Account you must activate the following API
 
 ### Terraform
 
-Be sure you have the correct Terraform version (0.10.x), you can choose the binary here:
+Be sure you have the correct Terraform version (>= 0.10.x), you can choose the binary here:
 
 - https://releases.hashicorp.com/terraform/
 

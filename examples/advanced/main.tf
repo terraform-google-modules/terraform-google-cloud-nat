@@ -1,5 +1,5 @@
 /**
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -27,9 +27,9 @@ module "cloud-nat" {
   router     = "${var.router}"
   nat_ips    = "${list(google_compute_address.main.self_link)}"
 
-  min_ports_per_vm = "${var.min_ports_per_vm}"
-  icmp_idle_timeout_sec = "${var.icmp_idle_timeout_sec}"
+  min_ports_per_vm                 = "${var.min_ports_per_vm}"
+  icmp_idle_timeout_sec            = "${var.icmp_idle_timeout_sec}"
   tcp_established_idle_timeout_sec = "${var.tcp_established_idle_timeout_sec}"
-  tcp_transitory_idle_timeout_sec = "${var.tcp_transitory_idle_timeout_sec}"
-  udp_idle_timeout_sec = "${var.udp_idle_timeout_sec}"
+  tcp_transitory_idle_timeout_sec  = "${var.tcp_transitory_idle_timeout_sec}"
+  udp_idle_timeout_sec             = "${var.udp_idle_timeout_sec}"
 }
