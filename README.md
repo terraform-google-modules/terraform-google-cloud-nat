@@ -123,10 +123,9 @@ The test-kitchen instances in `test/fixtures/` wrap identically-named examples i
 
 1. Configure the [test fixtures](#test-configuration)
 2. Download a Service Account key with the necessary permissions and put it in the module's root directory with the name `credentials.json`.
-3. Build the Docker containers for testing:
+3. Build the Docker container for testing:
 
   ```shell
-  make docker_build_terraform
   make docker_build_kitchen_terraform
   ```
 
@@ -136,7 +135,7 @@ The test-kitchen instances in `test/fixtures/` wrap identically-named examples i
   make docker_run
   ```
 
-  The module root directory will be loaded into the Docker container at `/cftk/workdir/`.
+  The module root directory will be loaded into the Docker container at `/cft/workdir/`.
 5. Run kitchen-terraform to test the infrastructure:
 
   1. `kitchen create` creates Terraform state and downloads modules, if applicable.
