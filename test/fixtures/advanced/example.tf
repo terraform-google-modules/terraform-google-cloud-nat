@@ -20,7 +20,7 @@ module "example" {
   project_id       = "${var.project_id}"
   credentials_path = "${local.credentials_path}"
   region           = "${var.region}"
-  name_suffix      = "-${random_string.suffix.result}"
+  name             = "advanced-nat-${random_string.suffix.result}"
   router           = "${google_compute_router.main.name}"
 
   min_ports_per_vm                 = "128"

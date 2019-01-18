@@ -15,7 +15,7 @@
  */
 
 resource "google_compute_address" "main" {
-  name   = "cloud-nat-address${var.name_suffix}"
+  name   = "address-${var.name}"
   region = "${var.region}"
 }
 
@@ -23,9 +23,9 @@ module "cloud-nat" {
   source     = "../../"
   project_id = "${var.project_id}"
   region     = "${var.region}"
-  name       = "cloud-nat${var.name_suffix}"
+  name       = "${var.name}"
   router     = "${var.router}"
-  nat_ips    = "${list(google_compute_address.main.self_link)}"
+  nat_ips    = ["${list(google_compute_address.main.self_link)}"]
 
   min_ports_per_vm                 = "${var.min_ports_per_vm}"
   icmp_idle_timeout_sec            = "${var.icmp_idle_timeout_sec}"

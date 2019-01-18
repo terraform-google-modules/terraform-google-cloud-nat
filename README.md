@@ -1,6 +1,6 @@
 # Terraform Google Cloud NAT Module
 
-This module handles opinionated Google Cloud Platform Cloud NAT creation and configuration.
+Terraform module for creating GCP Cloud NATs
 
 ## Usage
 

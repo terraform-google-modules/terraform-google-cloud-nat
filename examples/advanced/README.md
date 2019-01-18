@@ -1,6 +1,6 @@
 # Advanced Example
 
-This example illustrates how to use the cloud-nat module.
+This example illustrates how to use the cloud-nat module to manually configure NAT IPs, VM ports, and UDP/TCP timeouts.
 
 [^]: (autogen_docs_start)
 

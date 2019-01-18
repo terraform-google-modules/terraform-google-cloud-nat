@@ -15,3 +15,6 @@ attributes:
   - name: router_name
     required: true
     type: string
+  - name: name_suffix
+    required: true
+    type: string

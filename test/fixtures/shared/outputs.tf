@@ -25,3 +25,7 @@ output "router_name" {
 output "name" {
   value = "${module.example.name}"
 }
+
+output "name_suffix" {
+  value = "${random_string.suffix.result}"
+}

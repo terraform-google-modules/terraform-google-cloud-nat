@@ -1,6 +1,6 @@
 # Basic Example
 
-This example illustrates how to use the cloud-nat module.
+This example illustrates how to use the cloud-nat module to create a basic NAT that automatically generates a name and an NAT IP pool.
 
 [^]: (autogen_docs_start)
 

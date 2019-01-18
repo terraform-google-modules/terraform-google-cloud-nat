@@ -19,6 +19,11 @@ output "name" {
   value       = "${local.name}"
 }
 
+output "self_link" {
+  description = "Self-link of the Cloud NAT"
+  value = "${google_compute_router_nat.main.self_link}"
+}
+
 output "nat_ip_allocate_option" {
   description = "NAT IP allocation mode"
   value       = "${local.nat_ip_allocate_option}"

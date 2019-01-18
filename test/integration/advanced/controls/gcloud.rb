@@ -16,6 +16,7 @@ project_id = attribute('project_id')
 region = attribute('region')
 router = attribute('router_name')
 nat = attribute('name')
+name_suffix = attribute('name_suffix')
 
 control "gcloud" do
   title "Google Compute Router NAT configuration"
@@ -33,7 +34,7 @@ control "gcloud" do
 
     describe "nat" do
       it "did not generate a NAT name" do
-        expect(data["name"]).not_to match(/^cloud-nat-...../)
+        expect(data["name"]).to eq "advanced-nat-#{name_suffix}"
       end
 
       it "set IP allocation to manual" do

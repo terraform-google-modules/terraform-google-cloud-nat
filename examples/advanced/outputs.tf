@@ -14,3 +14,12 @@
  * limitations under the License.
  */
 
+output "name" {
+  description = "Name of the Cloud NAT"
+  value       = "${module.cloud-nat.name}"
+}
+
+output "self_link" {
+  description = "Self-link of the Cloud NAT"
+  value = "${module.cloud-nat.main.self_link}"
+}
