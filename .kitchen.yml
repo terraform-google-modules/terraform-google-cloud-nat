@@ -26,8 +26,6 @@ platforms:
 suites:
   - name: "basic"
     driver:
-      name: "terraform"
-      command_timeout: 1800
       root_module_directory: test/fixtures/basic
     verifier:
       name: terraform
@@ -35,12 +33,8 @@ suites:
       systems:
         - name: basic
           backend: local
-    provisioner:
-      name: terraform
   - name: "advanced"
     driver:
-      name: "terraform"
-      command_timeout: 1800
       root_module_directory: test/fixtures/advanced
     verifier:
       name: terraform
@@ -48,5 +42,3 @@ suites:
       systems:
         - name: advanced
           backend: local
-    provisioner:
-      name: terraform

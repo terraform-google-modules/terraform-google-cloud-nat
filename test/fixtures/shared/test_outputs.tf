@@ -15,21 +15,26 @@
  */
 
 output "project_id" {
+  description = "GCP Project ID"
   value = "${var.project_id}"
 }
 
 output "credentials_path" {
+  description = "Path to credentials file"
   value = "${var.credentials_path}"
 }
 
 output "region" {
+  description = "GCP Region"
   value = "${var.region}"
 }
 
 output "router_name" {
+  description = "Cloud NAT router name"
   value = "${module.cloud-nat.router_name}"
 }
 
 output "name" {
+  description = "Cloud NAT name"
   value = "${module.cloud-nat.name}"
 }
