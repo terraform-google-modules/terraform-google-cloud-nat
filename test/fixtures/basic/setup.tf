@@ -14,27 +14,28 @@
  * limitations under the License.
  */
 
-output "name" {
-  description = "Name of the Cloud NAT"
-  value       = "${local.name}"
+locals {
+  credentials_path = "${path.module}/${var.credentials_path}"
 }
 
-output "self_link" {
-  description = "Self-link of the Cloud NAT"
-  value = "${google_compute_router_nat.main.self_link}"
+provider "google" {
+  credentials = "${file(local.credentials_path)}"
+  region      = "${var.region}"
+  project     = "${var.project_id}"
 }
 
-output "nat_ip_allocate_option" {
-  description = "NAT IP allocation mode"
-  value       = "${local.nat_ip_allocate_option}"
+resource "random_string" "suffix" {
+  length  = 4
+  special = false
+  upper   = false
 }
 
-output "region" {
-  description = "Cloud NAT region"
-  value       = "${var.region}"
+resource "google_compute_network" "main" {
+  name                    = "cloud-nat-network${random_string.suffix.result}"
+  auto_create_subnetworks = false
 }
 
-output "router_name" {
-  description = "Cloud NAT router name"
-  value       = "${var.router}"
+resource "google_compute_router" "main" {
+  name    = "cloud-nat-router${random_string.suffix.result}"
+  network = "${google_compute_network.main.name}"
 }

@@ -1,4 +1,4 @@
-# Copyright 2018 Google LLC
+# Copyright 2019 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,8 +12,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ruby '2.4.2'
+ruby '2.5.3'
 
 source 'https://rubygems.org/' do
-  gem 'kitchen-terraform', '~> 4.0.3'
+  gem 'kitchen-terraform', '~> 4.2'
 end

@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-# Copyright 2018 Google LLC
+# Copyright 2019 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -48,7 +48,10 @@ function docker() {
 function check_terraform() {
   echo "Running terraform validate"
   #shellcheck disable=SC2156
-  find . -name "*.tf" -exec bash -c 'terraform validate --check-variables=false $(dirname "{}")' \;
+  find . -name "*.tf" -not -path "./autogen/*" -not -path "./test/fixtures/shared/*" -not -path "./test/fixtures/all_examples/*" -exec bash -c 'terraform validate --check-variables=false $(dirname "{}")' \;
+  echo "Running terraform fmt"
+  #shellcheck disable=SC2156
+  find . -name "*.tf" -not -path "./autogen/*" -not -path "./test/fixtures/shared/*" -not -path "./test/fixtures/all_examples/*" -exec bash -c 'terraform fmt -check=true -write=false "{}"' \;
 }
 
 # This function runs 'go fmt' and 'go vet' on every file

@@ -14,27 +14,18 @@
  * limitations under the License.
  */
 
-output "name" {
-  description = "Name of the Cloud NAT"
-  value       = "${local.name}"
-}
+module "example" {
+  source = "../../../examples/advanced"
 
-output "self_link" {
-  description = "Self-link of the Cloud NAT"
-  value = "${google_compute_router_nat.main.self_link}"
-}
+  project_id       = "${var.project_id}"
+  credentials_path = "${local.credentials_path}"
+  region           = "${var.region}"
+  name             = "advanced-nat-${random_string.suffix.result}"
+  router           = "${google_compute_router.main.name}"
 
-output "nat_ip_allocate_option" {
-  description = "NAT IP allocation mode"
-  value       = "${local.nat_ip_allocate_option}"
-}
-
-output "region" {
-  description = "Cloud NAT region"
-  value       = "${var.region}"
-}
-
-output "router_name" {
-  description = "Cloud NAT router name"
-  value       = "${var.router}"
+  min_ports_per_vm                 = "128"
+  icmp_idle_timeout_sec            = "15"
+  tcp_established_idle_timeout_sec = "600"
+  tcp_transitory_idle_timeout_sec  = "15"
+  udp_idle_timeout_sec             = "15"
 }

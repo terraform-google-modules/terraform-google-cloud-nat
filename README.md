@@ -1,6 +1,6 @@
 # Terraform Google Cloud NAT Module
 
-This module handles opinionated Google Cloud Platform Cloud NAT creation and configuration.
+Terraform module for creating GCP Cloud NATs
 
 ## Usage
 
@@ -56,15 +56,15 @@ Then perform the following commands on the root folder:
 
 Before this module can be used on a project, you must ensure that the following pre-requisites are fulfilled:
 
-1. Terraform and kubectl are [installed](#software-dependencies) on the machine where Terraform is executed.
+1. Terraform is [installed](#software-dependencies) on the machine where Terraform is executed.
 2. The Service Account you execute the module with has the right [permissions](#iam-roles).
 3. The APIs are [active](#enable-apis) on the project you will launch the cluster in.
 4. If you are using a Shared VPC, the APIs must also be activated on the Shared VPC host project and your service account needs the proper permissions there.
 
 ### Terraform plugins
 
-- [Terraform](https://www.terraform.io/downloads.html) 0.10.x
-- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) plugin v1.8.0
+- [Terraform](https://www.terraform.io/downloads.html) 0.11.x
+- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) plugin v1.20.0
 
 ### Configure a Service Account
 
@@ -83,7 +83,7 @@ In order to operate with the Service Account you must activate the following API
 
 ### Terraform
 
-Be sure you have the correct Terraform version (0.10.x), you can choose the binary here:
+Be sure you have the correct Terraform version (0.11.x), you can choose the binary here:
 
 - https://releases.hashicorp.com/terraform/
 
@@ -106,7 +106,7 @@ The project has the following folders and files:
 
 - [bundler](https://github.com/bundler/bundler)
 - [gcloud](https://cloud.google.com/sdk/install)
-- [terraform-docs](https://github.com/segmentio/terraform-docs/releases) 0.3.0
+- [terraform-docs](https://github.com/segmentio/terraform-docs/releases) 0.6.0
 
 ### Integration test
 
@@ -123,10 +123,9 @@ The test-kitchen instances in `test/fixtures/` wrap identically-named examples i
 
 1. Configure the [test fixtures](#test-configuration)
 2. Download a Service Account key with the necessary permissions and put it in the module's root directory with the name `credentials.json`.
-3. Build the Docker containers for testing:
+3. Build the Docker container for testing:
 
   ```shell
-  make docker_build_terraform
   make docker_build_kitchen_terraform
   ```
 
@@ -136,7 +135,7 @@ The test-kitchen instances in `test/fixtures/` wrap identically-named examples i
   make docker_run
   ```
 
-  The module root directory will be loaded into the Docker container at `/cftk/workdir/`.
+  The module root directory will be loaded into the Docker container at `/cft/workdir/`.
 5. Run kitchen-terraform to test the infrastructure:
 
   1. `kitchen create` creates Terraform state and downloads modules, if applicable.

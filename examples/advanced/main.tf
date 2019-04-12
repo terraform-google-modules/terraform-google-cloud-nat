@@ -1,5 +1,5 @@
 /**
- * Copyright 2018 Google LLC
+ * Copyright 2019 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,16 +14,22 @@
  * limitations under the License.
  */
 
+resource "google_compute_address" "main" {
+  name   = "address-${var.name}"
+  region = "${var.region}"
+}
+
 module "cloud-nat" {
   source     = "../../"
   project_id = "${var.project_id}"
   region     = "${var.region}"
-  router     = "${google_compute_router.router.name}"
-  name       = "my-cloud-nat-${random_string.suffix.result}"
-  nat_ips    = "${google_compute_address.address.*.self_link}"
-  min_ports_per_vm = "128"
-  icmp_idle_timeout_sec = "15"
-  tcp_established_idle_timeout_sec = "600"
-  tcp_transitory_idle_timeout_sec = "15"
-  udp_idle_timeout_sec = "15"
+  name       = "${var.name}"
+  router     = "${var.router}"
+  nat_ips    = ["${list(google_compute_address.main.self_link)}"]
+
+  min_ports_per_vm                 = "${var.min_ports_per_vm}"
+  icmp_idle_timeout_sec            = "${var.icmp_idle_timeout_sec}"
+  tcp_established_idle_timeout_sec = "${var.tcp_established_idle_timeout_sec}"
+  tcp_transitory_idle_timeout_sec  = "${var.tcp_transitory_idle_timeout_sec}"
+  udp_idle_timeout_sec             = "${var.udp_idle_timeout_sec}"
 }

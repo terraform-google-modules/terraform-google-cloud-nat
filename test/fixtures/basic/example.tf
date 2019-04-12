@@ -14,27 +14,11 @@
  * limitations under the License.
  */
 
-output "name" {
-  description = "Name of the Cloud NAT"
-  value       = "${local.name}"
-}
+module "example" {
+  source = "../../../examples/basic"
 
-output "self_link" {
-  description = "Self-link of the Cloud NAT"
-  value = "${google_compute_router_nat.main.self_link}"
-}
-
-output "nat_ip_allocate_option" {
-  description = "NAT IP allocation mode"
-  value       = "${local.nat_ip_allocate_option}"
-}
-
-output "region" {
-  description = "Cloud NAT region"
-  value       = "${var.region}"
-}
-
-output "router_name" {
-  description = "Cloud NAT router name"
-  value       = "${var.router}"
+  project_id       = "${var.project_id}"
+  credentials_path = "${local.credentials_path}"
+  region           = "${var.region}"
+  router           = "${google_compute_router.main.name}"
 }

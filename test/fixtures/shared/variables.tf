@@ -14,27 +14,14 @@
  * limitations under the License.
  */
 
-output "name" {
-  description = "Name of the Cloud NAT"
-  value       = "${local.name}"
+variable "project_id" {
+  description = "The GCP project to use for integration tests"
 }
 
-output "self_link" {
-  description = "Self-link of the Cloud NAT"
-  value = "${google_compute_router_nat.main.self_link}"
+variable "credentials_path" {
+  description = "The relative path from the fixture directory to the GCP credentials file that will run Terraform tests"
 }
 
-output "nat_ip_allocate_option" {
-  description = "NAT IP allocation mode"
-  value       = "${local.nat_ip_allocate_option}"
-}
-
-output "region" {
-  description = "Cloud NAT region"
-  value       = "${var.region}"
-}
-
-output "router_name" {
-  description = "Cloud NAT router name"
-  value       = "${var.router}"
+variable "region" {
+  description = "The GCP region to create and test resources in"
 }
