@@ -1,0 +1,4 @@
+project_id="your-project-id"
+# Relative path from ./examples/_example_ to root
+credentials_path="../../credentials.json"
+region="us-east4"

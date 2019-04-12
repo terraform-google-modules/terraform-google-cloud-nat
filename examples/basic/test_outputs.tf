@@ -1,0 +1,1 @@
+../../test/fixtures/shared/test_outputs.tf
