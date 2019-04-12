@@ -33,4 +33,3 @@ output "router_name" {
 output "name" {
   value = "${module.cloud-nat.name}"
 }
-

@@ -15,15 +15,15 @@
  */
 
 module "cloud-nat" {
-  source     = "../../"
-  project_id = "${var.project_id}"
-  region     = "${var.region}"
-  router     = "${google_compute_router.router.name}"
-  name       = "my-cloud-nat-${random_string.suffix.result}"
-  nat_ips    = "${google_compute_address.address.*.self_link}"
-  min_ports_per_vm = "128"
-  icmp_idle_timeout_sec = "15"
+  source                           = "../../"
+  project_id                       = "${var.project_id}"
+  region                           = "${var.region}"
+  router                           = "${google_compute_router.router.name}"
+  name                             = "my-cloud-nat-${random_string.suffix.result}"
+  nat_ips                          = "${google_compute_address.address.*.self_link}"
+  min_ports_per_vm                 = "128"
+  icmp_idle_timeout_sec            = "15"
   tcp_established_idle_timeout_sec = "600"
-  tcp_transitory_idle_timeout_sec = "15"
-  udp_idle_timeout_sec = "15"
+  tcp_transitory_idle_timeout_sec  = "15"
+  udp_idle_timeout_sec             = "15"
 }

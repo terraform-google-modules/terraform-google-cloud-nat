@@ -16,20 +16,20 @@
 
 output "name" {
   description = "Name of the Cloud NAT"
-  value = "${local.name}"
+  value       = "${local.name}"
 }
 
 output "nat_ip_allocate_option" {
   description = "NAT IP allocation mode"
-  value = "${local.nat_ip_allocate_option}"
+  value       = "${local.nat_ip_allocate_option}"
 }
 
 output "region" {
   description = "Cloud NAT region"
-  value = "${var.region}"
+  value       = "${var.region}"
 }
 
 output "router_name" {
   description = "Cloud NAT router name"
-  value = "${var.router}"
+  value       = "${var.router}"
 }
