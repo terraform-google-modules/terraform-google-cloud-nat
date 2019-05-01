@@ -15,21 +15,26 @@
  */
 
 output "project_id" {
-  value = "${var.project_id}"
+  description = "The ID of the project in which resources are created."
+  value       = "${var.project_id}"
 }
 
 output "credentials_path" {
-  value = "${var.credentials_path}"
+  description = "The pathname of the credentials file."
+  value       = "${var.credentials_path}"
 }
 
 output "region" {
-  value = "${var.region}"
+  description = "The region in which resources are created."
+  value       = "${var.region}"
 }
 
 output "router_name" {
-  value = "${module.cloud-nat.router_name}"
+  description = "The name of the Cloud NAT router."
+  value       = "${module.cloud-nat.router_name}"
 }
 
 output "name" {
-  value = "${module.cloud-nat.name}"
+  description = "The name of the Cloud NAT."
+  value       = "${module.cloud-nat.name}"
 }
