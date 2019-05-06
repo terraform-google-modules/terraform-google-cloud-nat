@@ -29,8 +29,6 @@ suites:
       name: "terraform"
       command_timeout: 1800
       root_module_directory: examples/basic
-      variable_files:
-        - test/fixtures/basic/terraform.tfvars
     verifier:
       name: terraform
       systems:
@@ -43,8 +41,6 @@ suites:
       name: "terraform"
       command_timeout: 1800
       root_module_directory: examples/advanced
-      variable_files:
-        - test/fixtures/advanced/terraform.tfvars
     verifier:
       name: terraform
       systems:
