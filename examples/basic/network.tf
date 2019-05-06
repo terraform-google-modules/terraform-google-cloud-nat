@@ -21,8 +21,8 @@ resource "random_string" "suffix" {
 }
 
 provider "google" {
-  region      = "${var.region}"
-  project     = "${var.project_id}"
+  region  = "${var.region}"
+  project = "${var.project_id}"
 }
 
 resource "google_compute_network" "network" {
