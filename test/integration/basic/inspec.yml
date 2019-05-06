@@ -6,9 +6,6 @@ attributes:
   - name: region
     required: true
     type: string
-  - name: credentials_path
-    required: true
-    type: string
   - name: name
     required: true
     type: string

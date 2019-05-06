@@ -21,7 +21,6 @@ resource "random_string" "suffix" {
 }
 
 provider "google" {
-  credentials = "${file(var.credentials_path)}"
   region      = "${var.region}"
   project     = "${var.project_id}"
 }

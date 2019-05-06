@@ -8,7 +8,6 @@ This example illustrates how to use the cloud-nat module.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| credentials\_path | The path to a Google Cloud Service Account credentials file | string | n/a | yes |
 | project\_id | The project ID to deploy to | string | n/a | yes |
 | region | The region to deploy to | string | n/a | yes |
 
@@ -16,7 +15,6 @@ This example illustrates how to use the cloud-nat module.
 
 | Name | Description |
 |------|-------------|
-| credentials\_path | The pathname of the credentials file. |
 | name | The name of the Cloud NAT. |
 | project\_id | The ID of the project in which resources are created. |
 | region | The region in which resources are created. |
