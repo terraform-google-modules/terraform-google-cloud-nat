@@ -91,6 +91,7 @@ version:
 docker_run:
 	docker run --rm -it \
 		-e PROJECT_ID \
+		-e REGION \
 		-e SERVICE_ACCOUNT_JSON \
 		-e GOOGLE_APPLICATION_CREDENTIALS=${CREDENTIALS_PATH} \
 		-v $(CURDIR):/cft/workdir \
@@ -101,6 +102,7 @@ docker_run:
 docker_create:
 	docker run --rm -it \
 		-e PROJECT_ID \
+		-e REGION \
 		-e SERVICE_ACCOUNT_JSON \
 		-e GOOGLE_APPLICATION_CREDENTIALS=${CREDENTIALS_PATH} \
 		-v $(CURDIR):/cft/workdir \
@@ -111,6 +113,7 @@ docker_create:
 docker_converge:
 	docker run --rm -it \
 		-e PROJECT_ID \
+		-e REGION \
 		-e SERVICE_ACCOUNT_JSON \
 		-e GOOGLE_APPLICATION_CREDENTIALS=${CREDENTIALS_PATH} \
 		-v $(CURDIR):/cft/workdir \
@@ -121,6 +124,7 @@ docker_converge:
 docker_verify:
 	docker run --rm -it \
 		-e PROJECT_ID \
+		-e REGION \
 		-e SERVICE_ACCOUNT_JSON \
 		-e GOOGLE_APPLICATION_CREDENTIALS=${CREDENTIALS_PATH} \
 		-v $(CURDIR):/cft/workdir \
@@ -131,6 +135,7 @@ docker_verify:
 docker_destroy:
 	docker run --rm -it \
 		-e PROJECT_ID \
+		-e REGION \
 		-e SERVICE_ACCOUNT_JSON \
 		-e GOOGLE_APPLICATION_CREDENTIALS=${CREDENTIALS_PATH} \
 		-v $(CURDIR):/cft/workdir \
@@ -141,6 +146,7 @@ docker_destroy:
 test_integration_docker:
 	docker run --rm -it \
 		-e PROJECT_ID \
+		-e REGION \
 		-e SERVICE_ACCOUNT_JSON \
 		-e GOOGLE_APPLICATION_CREDENTIALS=${CREDENTIALS_PATH} \
 		-v $(CURDIR):/cft/workdir \
