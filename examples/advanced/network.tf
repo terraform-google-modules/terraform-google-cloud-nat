@@ -21,6 +21,8 @@ resource "random_string" "suffix" {
 }
 
 provider "google" {
+  version = "~> 2.5.1"
+
   region  = "${var.region}"
   project = "${var.project_id}"
 }

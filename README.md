@@ -63,8 +63,8 @@ Before this module can be used on a project, you must ensure that the following 
 
 ### Terraform plugins
 
-- [Terraform](https://www.terraform.io/downloads.html) 0.10.x
-- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) plugin v1.8.0
+- [Terraform](https://www.terraform.io/downloads.html) v0.11
+- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) plugin v2.5
 
 ### Configure a Service Account
 
