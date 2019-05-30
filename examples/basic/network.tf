@@ -14,6 +14,10 @@
  * limitations under the License.
  */
 
+provider "random" {
+  version = "~> 2.1"
+}
+
 resource "random_string" "suffix" {
   length  = 4
   special = false
