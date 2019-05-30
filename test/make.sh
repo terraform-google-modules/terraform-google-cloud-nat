@@ -74,7 +74,7 @@ function docker() {
 # against all directory paths which contain *.tf files.
 function check_terraform() {
   echo "Running terraform validate"
-  find_files . -name "*.tf" -print0 \
+  find_files . -name "*.tf" -path 'test/fixtures/shared' -print0 \
     | compat_xargs -0 -n1 dirname \
     | sort -u \
     | compat_xargs -t -n1 terraform validate --check-variables=false
