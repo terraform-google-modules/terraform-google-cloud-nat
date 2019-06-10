@@ -71,3 +71,8 @@ variable "udp_idle_timeout_sec" {
   description = "(Optional) Timeout (in seconds) for UDP connections. Defaults to 30s if not set. Changing this forces a new NAT to be created."
   default     = "30"
 }
+
+variable "subnetworks" {
+  description = "(Optional) List of subnetwork blocks to be used when `source_subnetwork_ip_ranges_to_nat` is set to `LIST_OF_SUBNETWORKS`"
+  default     = []
+}
