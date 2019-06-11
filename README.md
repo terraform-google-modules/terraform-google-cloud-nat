@@ -37,6 +37,7 @@ Then perform the following commands on the root folder:
 | region | The region to deploy to | string | - | yes |
 | router | (Required) The name of the router in which this NAT will be configured. Changing this forces a new NAT to be created. | string | - | yes |
 | source\_subnetwork\_ip\_ranges\_to\_nat | (Optional) Defaults to ALL_SUBNETWORKS_ALL_IP_RANGES. How NAT should be configured per Subnetwork. Valid values include: ALL_SUBNETWORKS_ALL_IP_RANGES, ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, LIST_OF_SUBNETWORKS. Changing this forces a new NAT to be created. | string | `ALL_SUBNETWORKS_ALL_IP_RANGES` | no |
+| subnetworks | (Optional) List of subnetwork blocks to be used when `source_subnetwork_ip_ranges_to_nat` is set to `LIST_OF_SUBNETWORKS` | string | `<list>` | no |
 | tcp\_established\_idle\_timeout\_sec | (Optional) Timeout (in seconds) for TCP established connections. Defaults to 1200s if not set. Changing this forces a new NAT to be created. | string | `1200` | no |
 | tcp\_transitory\_idle\_timeout\_sec | (Optional) Timeout (in seconds) for TCP transitory connections. Defaults to 30s if not set. Changing this forces a new NAT to be created. | string | `30` | no |
 | udp\_idle\_timeout\_sec | (Optional) Timeout (in seconds) for UDP connections. Defaults to 30s if not set. Changing this forces a new NAT to be created. | string | `30` | no |
