@@ -2,6 +2,12 @@
 
 This module handles opinionated Google Cloud Platform Cloud NAT creation and configuration.
 
+## Compatibility
+
+ This module is meant for use with Terraform 0.12. If you haven't [upgraded](https://www.terraform.io/upgrade-guides/0-12.html)
+  and need a Terraform 0.11.x-compatible version of this module, the last released version intended for
+  Terraform 0.11.x is [0.1.0](https://registry.terraform.io/modules/terraform-google-modules/cloud-nat/google/0.1.0).
+
 ## Usage
 
 There are multiple examples included in the [examples](./examples/) folder but simple usage is as follows:
@@ -63,8 +69,8 @@ Before this module can be used on a project, you must ensure that the following 
 
 ### Terraform plugins
 
-- [Terraform](https://www.terraform.io/downloads.html) 0.10.x
-- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) plugin v1.8.0
+- [Terraform](https://www.terraform.io/downloads.html) 0.12.x
+- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) plugin v2.7.0
 
 ### Configure a Service Account
 

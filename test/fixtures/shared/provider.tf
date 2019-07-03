@@ -15,13 +15,14 @@
  */
 
 provider "google" {
-  version = ">= 1.20.0"
-  project = "${var.project_id}"
-  region  = "${var.region}"
+  version = ">= 2.7.0"
+  project = var.project_id
+  region  = var.region
 }
 
 provider "google-beta" {
-  version = ">= 1.20.0"
-  project = "${var.project_id}"
-  region  = "${var.region}"
+  version = ">= 2.7.0"
+  project = var.project_id
+  region  = var.region
 }
+

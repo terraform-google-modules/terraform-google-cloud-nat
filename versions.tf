@@ -14,18 +14,6 @@
  * limitations under the License.
  */
 
-output "project_id" {
-  value = "${var.project_id}"
-}
-
-output "region" {
-  value = "${var.region}"
-}
-
-output "router_name" {
-  value = "${google_compute_router.router.name}"
-}
-
-output "name" {
-  value = "${module.example.name}"
+terraform {
+  required_version = ">= 0.12"
 }

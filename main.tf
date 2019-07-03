@@ -23,28 +23,29 @@ resource "random_string" "name_suffix" {
 locals {
   # intermediate locals
   default_name                   = "cloud-nat-${random_string.name_suffix.result}"
-  nat_ips_length                 = "${length(var.nat_ips)}"
-  default_nat_ip_allocate_option = "${local.nat_ips_length > 0 ? "MANUAL_ONLY" : "AUTO_ONLY" }"
+  nat_ips_length                 = length(var.nat_ips)
+  default_nat_ip_allocate_option = local.nat_ips_length > 0 ? "MANUAL_ONLY" : "AUTO_ONLY"
 
   # locals for google_compute_router_nat
-  nat_ip_allocate_option = "${var.nat_ip_allocate_option ? var.nat_ip_allocate_option : local.default_nat_ip_allocate_option}"
-  name                   = "${var.name != "" ? var.name : local.default_name}"
+  nat_ip_allocate_option = var.nat_ip_allocate_option ? var.nat_ip_allocate_option : local.default_nat_ip_allocate_option
+  name                   = var.name != "" ? var.name : local.default_name
 }
 
 resource "google_compute_router_nat" "main" {
-  project = "${var.project_id}"
-  region  = "${var.region}"
+  project = var.project_id
+  region  = var.region
 
-  name   = "${local.name}"
-  router = "${var.router}"
+  name   = local.name
+  router = var.router
 
-  nat_ip_allocate_option             = "${local.nat_ip_allocate_option}"
-  nat_ips                            = ["${var.nat_ips}"]
-  source_subnetwork_ip_ranges_to_nat = "${var.source_subnetwork_ip_ranges_to_nat}"
+  nat_ip_allocate_option             = local.nat_ip_allocate_option
+  nat_ips                            = var.nat_ips
+  source_subnetwork_ip_ranges_to_nat = var.source_subnetwork_ip_ranges_to_nat
 
-  min_ports_per_vm                 = "${var.min_ports_per_vm}"
-  udp_idle_timeout_sec             = "${var.udp_idle_timeout_sec}"
-  icmp_idle_timeout_sec            = "${var.icmp_idle_timeout_sec}"
-  tcp_established_idle_timeout_sec = "${var.tcp_established_idle_timeout_sec}"
-  tcp_transitory_idle_timeout_sec  = "${var.tcp_transitory_idle_timeout_sec}"
+  min_ports_per_vm                 = var.min_ports_per_vm
+  udp_idle_timeout_sec             = var.udp_idle_timeout_sec
+  icmp_idle_timeout_sec            = var.icmp_idle_timeout_sec
+  tcp_established_idle_timeout_sec = var.tcp_established_idle_timeout_sec
+  tcp_transitory_idle_timeout_sec  = var.tcp_transitory_idle_timeout_sec
 }
+
