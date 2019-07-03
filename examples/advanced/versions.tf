@@ -14,10 +14,6 @@
  * limitations under the License.
  */
 
-module "example" {
-  source = "../../../examples/basic"
-
-  project_id  = var.project_id
-  region      = var.region
-  router_name = google_compute_router.router.name
+terraform {
+  required_version = ">= 0.12"
 }

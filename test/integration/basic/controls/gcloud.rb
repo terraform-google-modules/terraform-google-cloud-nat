@@ -33,7 +33,7 @@ control "gcloud" do
 
     describe "nat" do
       it "generated a NAT name" do
-        expect(data["name"]).to match(/^cloud-nat-...../)
+        expect(data["name"]).to match(/-cloud-nat-...../)
       end
 
       it "set IP allocation to auto" do
