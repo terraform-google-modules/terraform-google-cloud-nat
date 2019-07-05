@@ -15,18 +15,11 @@
  */
 
 variable "project_id" {
-  description = "The project ID to deploy to"
+  type        = "string"
+  description = "The project ID to deploy resources into"
 }
 
 variable "region" {
-  description = "The region to deploy to"
-}
-
-variable "router_name" {
-  description = "The name of the GCP Router to associate the NAT to"
-}
-
-variable "nat_addresses" {
-  type        = "list"
-  description = "The self_link of GCP Addresses to associate with the NAT"
+  type        = "string"
+  description = "The GCP region to deploy instances into"
 }

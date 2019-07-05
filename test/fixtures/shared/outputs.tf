@@ -18,18 +18,14 @@ output "project_id" {
   value = "${var.project_id}"
 }
 
-output "credentials_path" {
-  value = "${var.credentials_path}"
-}
-
 output "region" {
   value = "${var.region}"
 }
 
 output "router_name" {
-  value = "${module.cloud-nat.router_name}"
+  value = "${google_compute_router.router.name}"
 }
 
 output "name" {
-  value = "${module.cloud-nat.name}"
+  value = "${module.example.name}"
 }

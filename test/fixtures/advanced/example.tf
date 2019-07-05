@@ -14,22 +14,17 @@
  * limitations under the License.
  */
 
-output "project_id" {
-  value = "${var.project_id}"
+resource "google_compute_address" "address" {
+  count  = 2
+  name   = "nat-external-address-${count.index}-${random_string.suffix.result}"
+  region = "${var.region}"
 }
 
-output "credentials_path" {
-  value = "${var.credentials_path}"
-}
+module "example" {
+  source = "../../../examples/advanced"
 
-output "region" {
-  value = "${var.region}"
-}
-
-output "router_name" {
-  value = "${module.cloud-nat.router_name}"
-}
-
-output "name" {
-  value = "${module.cloud-nat.name}"
+  project_id    = "${var.project_id}"
+  region        = "${var.region}"
+  router_name   = "${google_compute_router.router.name}"
+  nat_addresses = "${google_compute_address.address.*.self_link}"
 }

@@ -8,19 +8,15 @@ This example illustrates how to use the cloud-nat module.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| credentials\_path | The path to a Google Cloud Service Account credentials file | string | - | yes |
-| project\_id | The project ID to deploy to | string | - | yes |
-| region | The region to deploy to | string | - | yes |
+| project\_id | The project ID to deploy to | string | n/a | yes |
+| region | The region to deploy to | string | n/a | yes |
+| router\_name | The name of the GCP Router to associate the NAT to | string | n/a | yes |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| credentials\_path | - |
-| name | - |
-| project\_id | - |
-| region | - |
-| router\_name | - |
+| name | The name of the created Cloud NAT instance |
 
 [^]: (autogen_docs_end)
 
