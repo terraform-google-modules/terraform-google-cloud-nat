@@ -14,19 +14,10 @@
  * limitations under the License.
  */
 
-variable "project_id" {
-  description = "The project ID to deploy to"
-}
+module "example" {
+  source = "../../../examples/basic"
 
-variable "region" {
-  description = "The region to deploy to"
-}
-
-variable "router_name" {
-  description = "The name of the GCP Router to associate the NAT to"
-}
-
-variable "nat_addresses" {
-  type        = "list"
-  description = "The self_link of GCP Addresses to associate with the NAT"
+  project_id  = "${var.project_id}"
+  region      = "${var.region}"
+  router_name = "${google_compute_router.router.name}"
 }

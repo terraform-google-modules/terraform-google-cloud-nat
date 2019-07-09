@@ -19,7 +19,7 @@ nat = attribute('name')
 
 control "gcloud" do
   title "Google Compute Router NAT configuration"
-  describe command("gcloud compute routers nats describe #{nat} --router #{router} --region #{region} --format json") do
+  describe command("gcloud --project #{project_id} compute routers nats describe #{nat} --router #{router} --router-region #{region} --format json") do
     its(:exit_status) { should eq 0 }
     its(:stderr) { should eq '' }
 

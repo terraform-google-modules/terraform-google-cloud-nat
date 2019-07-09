@@ -14,19 +14,14 @@
  * limitations under the License.
  */
 
-variable "project_id" {
-  description = "The project ID to deploy to"
+provider "google" {
+  version = ">= 1.20.0"
+  project = "${var.project_id}"
+  region  = "${var.region}"
 }
 
-variable "region" {
-  description = "The region to deploy to"
-}
-
-variable "router_name" {
-  description = "The name of the GCP Router to associate the NAT to"
-}
-
-variable "nat_addresses" {
-  type        = "list"
-  description = "The self_link of GCP Addresses to associate with the NAT"
+provider "google-beta" {
+  version = ">= 1.20.0"
+  project = "${var.project_id}"
+  region  = "${var.region}"
 }
