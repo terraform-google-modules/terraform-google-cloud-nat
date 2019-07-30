@@ -17,14 +17,14 @@
 resource "google_compute_address" "address" {
   count  = 2
   name   = "nat-external-address-${count.index}-${random_string.suffix.result}"
-  region = "${var.region}"
+  region = var.region
 }
 
 module "example" {
   source = "../../../examples/advanced"
 
-  project_id    = "${var.project_id}"
-  region        = "${var.region}"
-  router_name   = "${google_compute_router.router.name}"
-  nat_addresses = "${google_compute_address.address.*.self_link}"
+  project_id    = var.project_id
+  region        = var.region
+  router_name   = google_compute_router.router.name
+  nat_addresses = google_compute_address.address.*.self_link
 }

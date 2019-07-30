@@ -44,7 +44,7 @@ variable "nat_ip_allocate_option" {
 
 variable "nat_ips" {
   description = "(Optional) List of self_links of external IPs. Changing this forces a new NAT to be created."
-  type        = "list"
+  type        = list(string)
   default     = []
 }
 
@@ -71,3 +71,4 @@ variable "udp_idle_timeout_sec" {
   description = "(Optional) Timeout (in seconds) for UDP connections. Defaults to 30s if not set. Changing this forces a new NAT to be created."
   default     = "30"
 }
+

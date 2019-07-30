@@ -27,6 +27,7 @@ variable "router_name" {
 }
 
 variable "nat_addresses" {
-  type        = "list"
+  default     = []
+  type        = list(string)
   description = "The self_link of GCP Addresses to associate with the NAT"
 }

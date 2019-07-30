@@ -16,14 +16,15 @@
 
 module "cloud-nat" {
   source                           = "../../"
-  project_id                       = "${var.project_id}"
-  region                           = "${var.region}"
-  router                           = "${var.router_name}"
+  project_id                       = var.project_id
+  region                           = var.region
+  router                           = var.router_name
   name                             = "my-cloud-nat-${var.router_name}"
-  nat_ips                          = ["${var.nat_addresses}"]
+  nat_ips                          = var.nat_addresses
   min_ports_per_vm                 = "128"
   icmp_idle_timeout_sec            = "15"
   tcp_established_idle_timeout_sec = "600"
   tcp_transitory_idle_timeout_sec  = "15"
   udp_idle_timeout_sec             = "15"
 }
+
