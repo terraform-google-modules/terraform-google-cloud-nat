@@ -47,5 +47,14 @@ resource "google_compute_router_nat" "main" {
   icmp_idle_timeout_sec            = var.icmp_idle_timeout_sec
   tcp_established_idle_timeout_sec = var.tcp_established_idle_timeout_sec
   tcp_transitory_idle_timeout_sec  = var.tcp_transitory_idle_timeout_sec
+
+  dynamic "subnetwork" {
+    for_each = var.subnetworks
+    content {
+      name                     = subnetwork.value.name
+      source_ip_ranges_to_nat  = subnetwork.value.source_ip_ranges_to_nat
+      secondary_ip_range_names = subnetwork.value.secondary_ip_range_names
+    }
+  }
 }
 
