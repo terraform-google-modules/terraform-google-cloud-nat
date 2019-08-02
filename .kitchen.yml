@@ -48,3 +48,15 @@ suites:
           backend: local
     provisioner:
       name: terraform
+  - name: "subnetworks"
+    driver:
+      name: "terraform"
+      command_timeout: 1800
+      root_module_directory: test/fixtures/subnetworks
+    verifier:
+      name: terraform
+      systems:
+        - name: subnetworks
+          backend: local
+    provisioner:
+      name: terraform

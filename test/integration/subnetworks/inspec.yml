@@ -1,0 +1,14 @@
+name: subnetworks
+attributes:
+  - name: project_id
+    required: true
+    type: string
+  - name: region
+    required: true
+    type: string
+  - name: name
+    required: true
+    type: string
+  - name: router_name
+    required: true
+    type: string
