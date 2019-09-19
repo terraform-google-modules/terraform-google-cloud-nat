@@ -2,8 +2,7 @@
 
 This example illustrates how to use the cloud-nat module.
 
-[^]: (autogen_docs_start)
-
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Inputs
 
 | Name | Description | Type | Default | Required |
@@ -18,7 +17,7 @@ This example illustrates how to use the cloud-nat module.
 |------|-------------|
 | name | The name of the created Cloud NAT instance |
 
-[^]: (autogen_docs_end)
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 
 To provision this example, run the following from within this directory:
 

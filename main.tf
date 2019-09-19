@@ -56,7 +56,7 @@ resource "google_compute_router_nat" "main" {
   tcp_established_idle_timeout_sec   = var.tcp_established_idle_timeout_sec
   tcp_transitory_idle_timeout_sec    = var.tcp_transitory_idle_timeout_sec
 
-   dynamic "subnetwork" {
+  dynamic "subnetwork" {
     for_each = var.subnetworks
     content {
       name                     = subnetwork.value.name
