@@ -31,6 +31,6 @@ output "region" {
 
 output "router_name" {
   description = "Cloud NAT router name"
-  value       = var.router
+  value       = local.router
 }
 

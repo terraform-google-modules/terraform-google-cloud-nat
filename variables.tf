@@ -53,9 +53,13 @@ variable "network" {
   default     = ""
 }
 
+variable "create_router" {
+  description = "Create router instead of using an existing one, uses 'router' variable for new resource name."
+  default     = false
+}
+
 variable "router" {
   description = "The name of the router in which this NAT will be configured. Changing this forces a new NAT to be created."
-  default     = ""
 }
 
 variable "router_asn" {
