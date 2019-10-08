@@ -7,6 +7,10 @@ project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- Support for specific subnets with the `subnets` variable. [#10]
+
 ## [1.1.0] - 2019-10-02
 
 ### Added
@@ -33,3 +37,4 @@ project adheres to [Semantic Versioning](http://semver.org/).
 
 [#20]: https://github.com/terraform-google-modules/terraform-google-cloud-nat/pull/20
 [#12]: https://github.com/terraform-google-modules/terraform-google-cloud-nat/pull/12
+[#10]: https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/10
