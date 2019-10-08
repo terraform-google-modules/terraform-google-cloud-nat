@@ -87,3 +87,11 @@ variable "udp_idle_timeout_sec" {
   default     = "30"
 }
 
+variable "subnetworks" {
+  type    = list(object({
+    name                     = string,
+    source_ip_ranges_to_nat  = list(string)
+    secondary_ip_range_names = list(string)
+  }))
+  default = []
+}
