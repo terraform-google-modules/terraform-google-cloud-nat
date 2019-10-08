@@ -40,8 +40,20 @@ control "gcloud" do
         expect(data["natIpAllocateOption"]).to eq("MANUAL_ONLY")
       end
 
-      it "set subnet IP ranges to all subnets, all IP ranges" do
-        expect(data["sourceSubnetworkIpRangesToNat"]).to eq("LIST_OF_SUBNETWORKS")
+      it "set subnet sourceSubnetworkIpRangesToNat to LIST_OF_SUBNETWORKS" do
+         expect(data["sourceSubnetworkIpRangesToNat"]).to eq("LIST_OF_SUBNETWORKS")
+      end
+
+      it "set subnetworks list containing one element" do
+         expect(data["subnetworks"].length).to eq(1)
+      end
+
+      it "set subnetwork name match expected" do
+         expect(data["subnetworks"][0]["name"]).to match(/cft-cloud-nat-test-[A-Za-z0-9]{4}-a$/)
+      end
+
+      it "set subnetwork sourceIpRangesToNat to ALL_IP_RANGES" do
+         expect(data["subnetworks"][0]["sourceIpRangesToNat"]).to eq(["ALL_IP_RANGES"])
       end
 
       it "sets the ICMP idle timeout to 15 seconds" do
