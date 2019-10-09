@@ -28,7 +28,7 @@ module "example" {
   router_name   = google_compute_router.router.name
   nat_addresses = google_compute_address.address.*.self_link
 
-  subnetworks                        = [
+  subnetworks = [
     {
       name                     = google_compute_subnetwork.subnetwork-a.self_link
       source_ip_ranges_to_nat  = ["ALL_IP_RANGES"]

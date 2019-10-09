@@ -38,7 +38,7 @@ variable "source_subnetwork_ip_ranges_to_nat" {
 }
 
 variable "subnetworks" {
-  type    = list(object({
+  type = list(object({
     name                     = string,
     source_ip_ranges_to_nat  = list(string)
     secondary_ip_range_names = list(string)
