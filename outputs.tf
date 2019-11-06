@@ -26,7 +26,7 @@ output "nat_ip_allocate_option" {
 
 output "region" {
   description = "Cloud NAT region"
-  value       = var.region
+  value       = google_compute_router_nat.main.region
 }
 
 output "router_name" {
