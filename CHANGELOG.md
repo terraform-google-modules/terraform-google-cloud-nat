@@ -7,9 +7,16 @@ project adheres to [Semantic Versioning](http://semver.org/).
 
 ## [Unreleased]
 
+## [1.2.0] - 2019-11-22
+
 ### Added
 
 - Support for specific subnets with the `subnets` variable. [#10]
+
+### Changed
+
+- The `region` output depends on the `google_computer_router_nat` resource to enable a dependency graph between internal and 
+  external resources. [#22]
 
 ## [1.1.0] - 2019-10-02
 
@@ -30,11 +37,13 @@ project adheres to [Semantic Versioning](http://semver.org/).
 
 - Initial release
 
-[Unreleased]: https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v1.1.0...HEAD
+[Unreleased]: https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v1.2.0...HEAD
+[1.2.0]: https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v1.1.0...v1.2.0
 [1.1.0]: https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v1.0.0...v1.1.0
 [1.0.0]: https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v0.1.0...v1.0.0
 [0.1.0]: https://github.com/terraform-google-modules/terraform-google-cloud-nat/releases/tag/v0.1.0
 
+[#22]: https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/22
 [#20]: https://github.com/terraform-google-modules/terraform-google-cloud-nat/pull/20
 [#12]: https://github.com/terraform-google-modules/terraform-google-cloud-nat/pull/12
 [#10]: https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/10
