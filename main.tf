@@ -61,8 +61,7 @@ resource "google_compute_router_nat" "main" {
     content {
       name                     = subnetwork.value.name
       source_ip_ranges_to_nat  = subnetwork.value.source_ip_ranges_to_nat
-      secondary_ip_range_names = subnetwork.value.secondary_ip_range_names
+      secondary_ip_range_names = contains(subnetwork.value.source_ip_ranges_to_nat, "LIST_OF_SECONDARY_IP_RANGES") ? subnetwork.value.secondary_ip_range_names : []
     }
   }
 }
-
