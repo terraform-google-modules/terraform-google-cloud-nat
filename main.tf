@@ -64,4 +64,16 @@ resource "google_compute_router_nat" "main" {
       secondary_ip_range_names = contains(subnetwork.value.source_ip_ranges_to_nat, "LIST_OF_SECONDARY_IP_RANGES") ? subnetwork.value.secondary_ip_range_names : []
     }
   }
+
+  dynamic "log_config" {
+    for_each = var.log_config_enable == true ? [{
+      enable = var.log_config_enable
+      filter = var.log_config_filter
+    }] : []
+
+    content {
+      enable = log_config.value.enable
+      filter = log_config.value.filter
+    }
+  }
 }

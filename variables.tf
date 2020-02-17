@@ -95,3 +95,14 @@ variable "subnetworks" {
   }))
   default = []
 }
+
+variable "log_config_enable" {
+  type        = bool
+  description = "Indicates whether or not to export logs"
+  default     = false
+}
+variable "log_config_filter" {
+  type        = string
+  description = "Specifies the desired filtering of logs on this NAT. Valid values are: \"ERRORS_ONLY\", \"TRANSLATIONS_ONLY\", \"ALL\""
+  default     = "ALL"
+}
