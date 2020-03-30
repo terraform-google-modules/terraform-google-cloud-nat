@@ -5,6 +5,13 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 
+## [1.3.0](https://www.github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v1.2.0...v1.3.0) (2020-03-30)
+
+
+### Features
+
+* Add support for setting log_config ([#24](https://www.github.com/terraform-google-modules/terraform-google-cloud-nat/issues/24)) ([fb10d7d](https://www.github.com/terraform-google-modules/terraform-google-cloud-nat/commit/fb10d7d834ac0aa707183589d9b9bf4f4feda3c8))
+
 ## [Unreleased]
 
 ## [1.2.0] - 2019-11-22
