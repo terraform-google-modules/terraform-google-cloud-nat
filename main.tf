@@ -32,7 +32,7 @@ locals {
 }
 
 resource "google_compute_router" "router" {
-  count   = var.create_router ? 1 : 0
+  count   = var.create_router && var.enabled ? 1 : 0
   name    = var.router
   project = var.project_id
   region  = var.region
@@ -43,6 +43,7 @@ resource "google_compute_router" "router" {
 }
 
 resource "google_compute_router_nat" "main" {
+  count                              = var.enabled ? 1 : 0
   project                            = var.project_id
   region                             = var.region
   name                               = local.name

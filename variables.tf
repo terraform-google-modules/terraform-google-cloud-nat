@@ -14,6 +14,12 @@
  * limitations under the License.
  */
 
+variable "enabled" {
+  type        = bool
+  default     = true
+  description = "Enable/disable creation of resources"
+}
+
 variable "project_id" {
   description = "The project ID to deploy to"
 }
