@@ -28,7 +28,7 @@ locals {
   # locals for google_compute_router_nat
   nat_ip_allocate_option = var.nat_ip_allocate_option ? var.nat_ip_allocate_option : local.default_nat_ip_allocate_option
   name                   = var.name != "" ? var.name : local.default_name
-  router                 = var.create_router ? google_compute_router.router[0].name : var.router
+  router                 = var.create_router && var.enabled ? google_compute_router.router[0].name : var.router
 }
 
 resource "google_compute_router" "router" {
