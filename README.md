@@ -94,4 +94,4 @@ In order to operate with the Service Account you must activate the following API
 
 ## Contributing
 
-Refer to the [contribution guidelines](../CONTRIBUTING.md) for information on contributing to this module.
+Refer to the [contribution guidelines](./CONTRIBUTING.md) for information on contributing to this module.
