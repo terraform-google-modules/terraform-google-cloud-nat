@@ -34,8 +34,8 @@ Then perform the following commands on the root folder:
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| enabled | Enabling resource creation for cloud-nat module | bool | `"true"` | no |
 | create\_router | Create router instead of using an existing one, uses 'router' variable for new resource name. | string | `"false"` | no |
+| enabled | Enable/disable creation of resources | bool | `"true"` | no |
 | icmp\_idle\_timeout\_sec | Timeout (in seconds) for ICMP connections. Defaults to 30s if not set. Changing this forces a new NAT to be created. | string | `"30"` | no |
 | log\_config\_enable | Indicates whether or not to export logs | bool | `"false"` | no |
 | log\_config\_filter | Specifies the desired filtering of logs on this NAT. Valid values are: "ERRORS_ONLY", "TRANSLATIONS_ONLY", "ALL" | string | `"ALL"` | no |
