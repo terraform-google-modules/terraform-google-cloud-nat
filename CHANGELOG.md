@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 Releases are automated via [Conventional Commit](https://www.conventionalcommits.org/) messages.
 
+## [1.4.0](https://www.github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v1.3.0...v1.4.0) (2021-02-17)
+
+
+### Features
+
+* add suport for setting enable_endpoint_independent_mapping options ([#46](https://www.github.com/terraform-google-modules/terraform-google-cloud-nat/issues/46)) ([1df7c42](https://www.github.com/terraform-google-modules/terraform-google-cloud-nat/commit/1df7c4251519e3536169f82a6986a57b124c1dd7))
+
 ## [1.3.0](https://www.github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v1.2.0...v1.3.0) (2020-03-30)
 
 
