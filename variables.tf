@@ -106,3 +106,9 @@ variable "log_config_filter" {
   description = "Specifies the desired filtering of logs on this NAT. Valid values are: \"ERRORS_ONLY\", \"TRANSLATIONS_ONLY\", \"ALL\""
   default     = "ALL"
 }
+
+variable "enable_endpoint_independent_mapping" {
+  type        = bool
+  description = "Specifies if endpoint independent mapping is enabled."
+  default     = null
+}
