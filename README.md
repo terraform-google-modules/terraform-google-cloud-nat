@@ -40,6 +40,7 @@ Then perform the following commands on the root folder:
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
 | create\_router | Create router instead of using an existing one, uses 'router' variable for new resource name. | string | `"false"` | no |
+| enable\_endpoint\_independent\_mapping | Specifies if endpoint independent mapping is enabled. | bool | `"null"` | no |
 | icmp\_idle\_timeout\_sec | Timeout (in seconds) for ICMP connections. Defaults to 30s if not set. Changing this forces a new NAT to be created. | string | `"30"` | no |
 | log\_config\_enable | Indicates whether or not to export logs | bool | `"false"` | no |
 | log\_config\_filter | Specifies the desired filtering of logs on this NAT. Valid values are: "ERRORS_ONLY", "TRANSLATIONS_ONLY", "ALL" | string | `"ALL"` | no |
@@ -81,7 +82,7 @@ Before this module can be used on a project, you must ensure that the following 
 ### Terraform plugins
 
 - [Terraform](https://www.terraform.io/downloads.html) 0.12.x
-- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) plugin v2.7.0
+- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) plugin v3.52.0
 
 ### Configure a Service Account
 
