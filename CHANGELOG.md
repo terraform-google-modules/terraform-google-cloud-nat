@@ -29,7 +29,7 @@ Releases are automated via [Conventional Commit](https://www.conventionalcommits
 
 ### Changed
 
-- The `region` output depends on the `google_computer_router_nat` resource to enable a dependency graph between internal and 
+- The `region` output depends on the `google_computer_router_nat` resource to enable a dependency graph between internal and
   external resources. [#22]
 
 ## [1.1.0] - 2019-10-02
