@@ -6,10 +6,10 @@ This example illustrates how to use the cloud-nat module.
 ## Inputs
 
 | Name | Description | Type | Default | Required |
-|------|-------------|:----:|:-----:|:-----:|
-| project\_id | The project ID to deploy to | string | n/a | yes |
-| region | The region to deploy to | string | n/a | yes |
-| router\_name | The name of the GCP Router to associate the NAT to | string | n/a | yes |
+|------|-------------|------|---------|:--------:|
+| project\_id | The project ID to deploy to | `any` | n/a | yes |
+| region | The region to deploy to | `any` | n/a | yes |
+| router\_name | The name of the GCP Router to associate the NAT to | `any` | n/a | yes |
 
 ## Outputs
 
