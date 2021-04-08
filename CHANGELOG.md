@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 Releases are automated via [Conventional Commit](https://www.conventionalcommits.org/) messages.
 
+## [2.0.0](https://www.github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v1.4.0...v2.0.0) (2021-03-24)
+
+
+### ⚠ BREAKING CHANGES
+
+* add Terraform 0.13 constraint and module attribution (#48)
+
+### Features
+
+* add Terraform 0.13 constraint and module attribution ([#48](https://www.github.com/terraform-google-modules/terraform-google-cloud-nat/issues/48)) ([c4fd7b4](https://www.github.com/terraform-google-modules/terraform-google-cloud-nat/commit/c4fd7b4c8ac5777675d2880dac4169367de5d61f))
+
 ## [1.4.0](https://www.github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v1.3.0...v1.4.0) (2021-02-17)
 
 
