@@ -70,7 +70,10 @@ resource "google_compute_router_nat" "main" {
     for_each = var.log_config_enable == true ? [{
       enable = var.log_config_enable
       filter = var.log_config_filter
-    }] : []
+      }] : [{
+      enable = false
+      filter = "ALL"
+    }]
 
     content {
       enable = log_config.value.enable
