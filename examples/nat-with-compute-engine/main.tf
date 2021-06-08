@@ -64,23 +64,6 @@ resource "google_compute_firewall" "rules" {
 }
 # [END vpc_firewall]
 
-#[START iam_policy]
-resource "google_project_iam_policy" "project" {
-  project     = var.project_id
-  policy_data = data.google_iam_policy.admin.policy_data
-}
-
-data "google_iam_policy" "admin" {
-  binding {
-    role = "roles/iap.tunnelResourceAccessor"
-
-    members = [
-      "user:test-user@example.com"
-    ]
-  }
-}
-#[END iam_policy]
-
 # [START cloudnat_router]
 resource "google_compute_router" "router" {
   project = var.project_id
