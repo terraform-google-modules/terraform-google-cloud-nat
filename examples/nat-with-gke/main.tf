@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-# [START vpc_network]
+# [START vpc_network_nat_gke]
 module "test-vpc-module" {
   source       = "terraform-google-modules/network/google"
   version      = "~> 3.3.0"
@@ -30,9 +30,9 @@ module "test-vpc-module" {
     }
   ]
 }
-# [END vpc_network]
+# [END vpc_network_nat_gke]
 
-# [START gke_private_cluster]
+# [START gke_private_cluster_nat_gke]
 resource "google_container_cluster" "primary" {
   project            = var.project_id
   name               = "nat-test-cluster"
@@ -50,9 +50,9 @@ resource "google_container_cluster" "primary" {
   master_authorized_networks_config {
   }
 }
-# [END gke_private_cluster]
+# [END gke_private_cluster_nat_gke]
 
-# [START vpc_firewall]
+# [START vpc_firewall_nat_gke]
 resource "google_compute_firewall" "rules" {
   project = var.project_id
   name    = "allow-ssh"
@@ -63,18 +63,18 @@ resource "google_compute_firewall" "rules" {
   }
   source_ranges = ["35.235.240.0/20"]
 }
-# [END vpc_firewall]
+# [END vpc_firewall_nat_gke]
 
-# [START cloudnat_router]
+# [START cloudnat_router_nat_gke]
 resource "google_compute_router" "router" {
   project = var.project_id
   name    = "nat-router"
   network = var.network
   region  = "us-east4"
 }
-# [END cloudnat_router]
+# [END cloudnat_router_nat_gke]
 
-# [START cloudnat_nat]
+# [START cloudnat_nat_gke]
 module "cloud-nat" {
   source                             = "terraform-google-modules/cloud-nat/google"
   version                            = "~> 2.0.0"
@@ -84,4 +84,4 @@ module "cloud-nat" {
   name                               = "nat-config"
   source_subnetwork_ip_ranges_to_nat = "ALL_SUBNETWORKS_ALL_IP_RANGES"
 }
-# [END cloudnat_nat]
+# [END cloudnat_nat_gke]
