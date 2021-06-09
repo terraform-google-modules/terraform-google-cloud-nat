@@ -50,6 +50,15 @@ resource "google_compute_instance" "default" {
 }
 # [END compute_vm_nat_gce]
 
+
+# [START iam_nat_iap_gce]
+resource "google_project_iam_member" "project" {
+  project = var.project_id
+  role    = "roles/iap.tunnelResourceAccessor"
+  member  = "serviceAccount:test123@example.domain.com"
+}
+# [END iam_nat_iap_gce]
+
 # [START vpc_firewall_nat_gce]
 resource "google_compute_firewall" "rules" {
   project = var.project_id
