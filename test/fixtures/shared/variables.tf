@@ -15,12 +15,12 @@
  */
 
 variable "project_id" {
-  type        = "string"
+  type        = string
   description = "The project ID to deploy resources into"
 }
 
 variable "region" {
-  type        = "string"
+  type        = string
   description = "The GCP region to deploy instances into"
   default     = "us-east4"
 }
