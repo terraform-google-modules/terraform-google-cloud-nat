@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 Releases are automated via [Conventional Commit](https://www.conventionalcommits.org/) messages.
 
+## [2.1.0](https://www.github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v2.0.0...v2.1.0) (2021-11-16)
+
+
+### Changed
+
+- Supported version of Google Terraform provider is 4.1
+
+
 ## [2.0.0](https://www.github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v1.4.0...v2.0.0) (2021-03-24)
 
 
