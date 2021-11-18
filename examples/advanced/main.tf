@@ -29,4 +29,3 @@ module "cloud-nat" {
   source_subnetwork_ip_ranges_to_nat = var.source_subnetwork_ip_ranges_to_nat
   subnetworks                        = var.subnetworks
 }
-
