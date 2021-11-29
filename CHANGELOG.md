@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 Releases are automated via [Conventional Commit](https://www.conventionalcommits.org/) messages.
 
+## [2.1.0](https://www.github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v2.0.0...v2.1.0) (2021-11-18)
+
+
+### Features
+
+* update TPG version constraints to allow 4.0 ([#61](https://www.github.com/terraform-google-modules/terraform-google-cloud-nat/issues/61)) ([6418dfd](https://www.github.com/terraform-google-modules/terraform-google-cloud-nat/commit/6418dfd1a6898578e03c8a65fe514e617aab7513))
+
 ## [2.0.0](https://www.github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v1.4.0...v2.0.0) (2021-03-24)
 
 
