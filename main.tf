@@ -38,7 +38,8 @@ resource "google_compute_router" "router" {
   region  = var.region
   network = var.network
   bgp {
-    asn = var.router_asn
+    asn       = var.router_asn
+    keepalive = var.router_bgp_keepalive
   }
 }
 
