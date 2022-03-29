@@ -67,6 +67,11 @@ variable "router_asn" {
   default     = "64514"
 }
 
+variable "router_keepalive_interval" {
+  description = "Router keepalive_interval, only if router is not passed in and is created by the module."
+  default     = "20"
+}
+
 variable "source_subnetwork_ip_ranges_to_nat" {
   description = "Defaults to ALL_SUBNETWORKS_ALL_IP_RANGES. How NAT should be configured per Subnetwork. Valid values include: ALL_SUBNETWORKS_ALL_IP_RANGES, ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, LIST_OF_SUBNETWORKS. Changing this forces a new NAT to be created."
   default     = "ALL_SUBNETWORKS_ALL_IP_RANGES"
