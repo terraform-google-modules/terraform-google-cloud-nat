@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 Releases are automated via [Conventional Commit](https://www.conventionalcommits.org/) messages.
 
+## [2.2.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v2.1.0...v2.2.0) (2022-04-13)
+
+
+### Features
+
+* add router_keepalive_interval input var ([#66](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/66)) ([8409e80](https://github.com/terraform-google-modules/terraform-google-cloud-nat/commit/8409e802dbda17ba4cadadc30687944af1955149))
+
 ## [2.1.0](https://www.github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v2.0.0...v2.1.0) (2021-11-18)
 
 
