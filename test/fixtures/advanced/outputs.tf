@@ -29,3 +29,7 @@ output "router_name" {
 output "name" {
   value = module.example.name
 }
+
+output "random_id" {
+  value = random_string.suffix.result
+}

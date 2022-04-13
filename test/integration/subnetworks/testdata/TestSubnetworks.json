@@ -1,0 +1,19 @@
+{
+  "enableEndpointIndependentMapping": true,
+  "icmpIdleTimeoutSec": 15,
+  "minPortsPerVm": 128,
+  "name": "my-cloud-nat-cft-cloud-nat-test-RANDOM_ID",
+  "natIpAllocateOption": "MANUAL_ONLY",
+  "sourceSubnetworkIpRangesToNat": "LIST_OF_SUBNETWORKS",
+  "subnetworks": [
+    {
+      "name": "https://www.googleapis.com/compute/v1/projects/PROJECT_ID/regions/us-east4/subnetworks/cft-cloud-nat-test-RANDOM_ID-a",
+      "sourceIpRangesToNat": [
+        "ALL_IP_RANGES"
+      ]
+    }
+  ],
+  "tcpEstablishedIdleTimeoutSec": 600,
+  "tcpTransitoryIdleTimeoutSec": 15,
+  "udpIdleTimeoutSec": 15
+}

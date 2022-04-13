@@ -1,0 +1,11 @@
+{
+  "enableEndpointIndependentMapping": true,
+  "icmpIdleTimeoutSec": 30,
+  "minPortsPerVm": 64,
+  "name": "my-cloud-nat-cft-cloud-nat-test-RANDOM_ID",
+  "natIpAllocateOption": "AUTO_ONLY",
+  "sourceSubnetworkIpRangesToNat": "ALL_SUBNETWORKS_ALL_IP_RANGES",
+  "tcpEstablishedIdleTimeoutSec": 1200,
+  "tcpTransitoryIdleTimeoutSec": 30,
+  "udpIdleTimeoutSec": 30
+}
