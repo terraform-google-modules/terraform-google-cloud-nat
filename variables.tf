@@ -15,79 +15,94 @@
  */
 
 variable "project_id" {
+  type        = string
   description = "The project ID to deploy to"
 }
 
 variable "region" {
+  type        = string
   description = "The region to deploy to"
 }
 
 variable "icmp_idle_timeout_sec" {
+  type        = string
   description = "Timeout (in seconds) for ICMP connections. Defaults to 30s if not set. Changing this forces a new NAT to be created."
   default     = "30"
 }
 
 variable "min_ports_per_vm" {
+  type        = string
   description = "Minimum number of ports allocated to a VM from this NAT config. Defaults to 64 if not set. Changing this forces a new NAT to be created."
   default     = "64"
 }
 
 variable "name" {
+  type        = string
   description = "Defaults to 'cloud-nat-RANDOM_SUFFIX'. Changing this forces a new NAT to be created."
   default     = ""
 }
 
 variable "nat_ip_allocate_option" {
+  type        = string
   description = "Value inferred based on nat_ips. If present set to MANUAL_ONLY, otherwise AUTO_ONLY."
   default     = "false"
 }
 
 variable "nat_ips" {
-  description = "List of self_links of external IPs. Changing this forces a new NAT to be created."
   type        = list(string)
+  description = "List of self_links of external IPs. Changing this forces a new NAT to be created."
   default     = []
 }
 
 variable "network" {
+  type        = string
   description = "VPN name, only if router is not passed in and is created by the module."
   default     = ""
 }
 
 variable "create_router" {
+  type        = bool
   description = "Create router instead of using an existing one, uses 'router' variable for new resource name."
   default     = false
 }
 
 variable "router" {
+  type        = string
   description = "The name of the router in which this NAT will be configured. Changing this forces a new NAT to be created."
 }
 
 variable "router_asn" {
+  type        = string
   description = "Router ASN, only if router is not passed in and is created by the module."
   default     = "64514"
 }
 
 variable "router_keepalive_interval" {
+  type        = string
   description = "Router keepalive_interval, only if router is not passed in and is created by the module."
   default     = "20"
 }
 
 variable "source_subnetwork_ip_ranges_to_nat" {
+  type        = string
   description = "Defaults to ALL_SUBNETWORKS_ALL_IP_RANGES. How NAT should be configured per Subnetwork. Valid values include: ALL_SUBNETWORKS_ALL_IP_RANGES, ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, LIST_OF_SUBNETWORKS. Changing this forces a new NAT to be created."
   default     = "ALL_SUBNETWORKS_ALL_IP_RANGES"
 }
 
 variable "tcp_established_idle_timeout_sec" {
+  type        = string
   description = "Timeout (in seconds) for TCP established connections. Defaults to 1200s if not set. Changing this forces a new NAT to be created."
   default     = "1200"
 }
 
 variable "tcp_transitory_idle_timeout_sec" {
+  type        = string
   description = "Timeout (in seconds) for TCP transitory connections. Defaults to 30s if not set. Changing this forces a new NAT to be created."
   default     = "30"
 }
 
 variable "udp_idle_timeout_sec" {
+  type        = string
   description = "Timeout (in seconds) for UDP connections. Defaults to 30s if not set. Changing this forces a new NAT to be created."
   default     = "30"
 }
