@@ -50,9 +50,9 @@ Then perform the following commands on the root folder:
 | nat\_ip\_allocate\_option | Value inferred based on nat\_ips. If present set to MANUAL\_ONLY, otherwise AUTO\_ONLY. | `string` | `"false"` | no |
 | nat\_ips | List of self\_links of external IPs. Changing this forces a new NAT to be created. | `list(string)` | `[]` | no |
 | network | VPN name, only if router is not passed in and is created by the module. | `string` | `""` | no |
-| project\_id | The project ID to deploy to | `any` | n/a | yes |
-| region | The region to deploy to | `any` | n/a | yes |
-| router | The name of the router in which this NAT will be configured. Changing this forces a new NAT to be created. | `any` | n/a | yes |
+| project\_id | The project ID to deploy to | `string` | n/a | yes |
+| region | The region to deploy to | `string` | n/a | yes |
+| router | The name of the router in which this NAT will be configured. Changing this forces a new NAT to be created. | `string` | n/a | yes |
 | router\_asn | Router ASN, only if router is not passed in and is created by the module. | `string` | `"64514"` | no |
 | router\_keepalive\_interval | Router keepalive\_interval, only if router is not passed in and is created by the module. | `string` | `"20"` | no |
 | source\_subnetwork\_ip\_ranges\_to\_nat | Defaults to ALL\_SUBNETWORKS\_ALL\_IP\_RANGES. How NAT should be configured per Subnetwork. Valid values include: ALL\_SUBNETWORKS\_ALL\_IP\_RANGES, ALL\_SUBNETWORKS\_ALL\_PRIMARY\_IP\_RANGES, LIST\_OF\_SUBNETWORKS. Changing this forces a new NAT to be created. | `string` | `"ALL_SUBNETWORKS_ALL_IP_RANGES"` | no |
