@@ -1,5 +1,5 @@
 /**
- * Copyright 2018 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -57,6 +57,7 @@ resource "google_compute_router_nat" "main" {
   tcp_established_idle_timeout_sec    = var.tcp_established_idle_timeout_sec
   tcp_transitory_idle_timeout_sec     = var.tcp_transitory_idle_timeout_sec
   enable_endpoint_independent_mapping = var.enable_endpoint_independent_mapping
+  enable_dynamic_port_allocation      = var.enable_dynamic_port_allocation
 
   dynamic "subnetwork" {
     for_each = var.subnetworks

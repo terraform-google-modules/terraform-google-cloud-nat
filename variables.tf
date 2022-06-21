@@ -1,5 +1,5 @@
 /**
- * Copyright 2018 Google LLC
+ * Copyright 2022 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -127,8 +127,14 @@ variable "log_config_filter" {
   default     = "ALL"
 }
 
+variable "enable_dynamic_port_allocation" {
+  type        = bool
+  description = "Enable Dynamic Port Allocation. If minPorts is set, minPortsPerVm must be set to a power of two greater than or equal to 32."
+  default     = false
+
+}
 variable "enable_endpoint_independent_mapping" {
   type        = bool
   description = "Specifies if endpoint independent mapping is enabled."
-  default     = null
+  default     = true
 }
