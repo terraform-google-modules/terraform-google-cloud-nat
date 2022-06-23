@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 Releases are automated via [Conventional Commit](https://www.conventionalcommits.org/) messages.
 
+### [2.2.1](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v2.2.0...v2.2.1) (2022-05-24)
+
+
+### Bug Fixes
+
+* add variable type in variables.tf ([#70](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/70)) ([2cfe6d3](https://github.com/terraform-google-modules/terraform-google-cloud-nat/commit/2cfe6d326f19deaa901d97f225d608bc359d77d4))
+
 ## [2.2.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v2.1.0...v2.2.0) (2022-04-13)
 
 
