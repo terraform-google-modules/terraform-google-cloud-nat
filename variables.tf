@@ -44,7 +44,7 @@ variable "name" {
 
 variable "nat_ips" {
   type        = list(string)
-  description = "List of self_links of external IPs. Changing this forces a new NAT to be created. `nat_ip_allocate_option` value is inferred based on nat_ips. If present set to MANUAL_ONLY, otherwise AUTO_ONLY."
+  description = "List of self_links of external IPs. Changing this forces a new NAT to be created. Value of `nat_ip_allocate_option` is inferred based on nat_ips. If present set to MANUAL_ONLY, otherwise AUTO_ONLY."
   default     = []
 }
 

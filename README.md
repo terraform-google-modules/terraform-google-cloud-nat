@@ -48,7 +48,7 @@ Then perform the following commands on the root folder:
 | log\_config\_filter | Specifies the desired filtering of logs on this NAT. Valid values are: "ERRORS\_ONLY", "TRANSLATIONS\_ONLY", "ALL" | `string` | `"ALL"` | no |
 | min\_ports\_per\_vm | Minimum number of ports allocated to a VM from this NAT config. Defaults to 64 if not set. Changing this forces a new NAT to be created. | `string` | `"64"` | no |
 | name | Defaults to 'cloud-nat-RANDOM\_SUFFIX'. Changing this forces a new NAT to be created. | `string` | `""` | no |
-| nat\_ips | List of self\_links of external IPs. Changing this forces a new NAT to be created. `nat_ip_allocate_option` value is inferred based on nat_ips. If present set to MANUAL_ONLY, otherwise AUTO_ONLY. | `list(string)` | `[]` | no |
+| nat\_ips | List of self\_links of external IPs. Changing this forces a new NAT to be created. Value of `nat_ip_allocate_option` is inferred based on nat\_ips. If present set to MANUAL\_ONLY, otherwise AUTO\_ONLY. | `list(string)` | `[]` | no |
 | network | VPN name, only if router is not passed in and is created by the module. | `string` | `""` | no |
 | project\_id | The project ID to deploy to | `string` | n/a | yes |
 | region | The region to deploy to | `string` | n/a | yes |
