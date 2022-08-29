@@ -22,11 +22,9 @@ resource "random_string" "name_suffix" {
 
 locals {
   # intermediate locals
-  default_name                   = "cloud-nat-${random_string.name_suffix.result}"
-  nat_ips_length                 = length(var.nat_ips)
-  default_nat_ip_allocate_option = local.nat_ips_length > 0 ? "MANUAL_ONLY" : "AUTO_ONLY"
+  default_name = "cloud-nat-${random_string.name_suffix.result}"
   # locals for google_compute_router_nat
-  nat_ip_allocate_option = var.nat_ip_allocate_option ? var.nat_ip_allocate_option : local.default_nat_ip_allocate_option
+  nat_ip_allocate_option = length(var.nat_ips) > 0 ? "MANUAL_ONLY" : "AUTO_ONLY"
   name                   = var.name != "" ? var.name : local.default_name
   router                 = var.create_router ? google_compute_router.router[0].name : var.router
 }
