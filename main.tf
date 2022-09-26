@@ -56,6 +56,7 @@ resource "google_compute_router_nat" "main" {
   icmp_idle_timeout_sec               = var.icmp_idle_timeout_sec
   tcp_established_idle_timeout_sec    = var.tcp_established_idle_timeout_sec
   tcp_transitory_idle_timeout_sec     = var.tcp_transitory_idle_timeout_sec
+  tcp_time_wait_timeout_sec           = var.tcp_time_wait_timeout_sec
   enable_endpoint_independent_mapping = var.enable_endpoint_independent_mapping
 
   dynamic "subnetwork" {

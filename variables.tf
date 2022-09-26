@@ -107,6 +107,12 @@ variable "udp_idle_timeout_sec" {
   default     = "30"
 }
 
+variable "tcp_time_wait_timeout_sec" {
+  type        = string
+  description = "Timeout (in seconds) for TCP connections that are in TIME_WAIT state. Defaults to 120s if not set."
+  default     = "120"
+}
+
 variable "subnetworks" {
   type = list(object({
     name                     = string,
