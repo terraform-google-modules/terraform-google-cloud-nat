@@ -1,5 +1,10 @@
 {
   "enableEndpointIndependentMapping": true,
+  "endpointTypes":[
+    {
+      "ENDPOINT_TYPE_VM"
+    }
+  ],
   "icmpIdleTimeoutSec": 15,
   "minPortsPerVm": 128,
   "name": "my-cloud-nat-cft-cloud-nat-test-RANDOM_ID",
