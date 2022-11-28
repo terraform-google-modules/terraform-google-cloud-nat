@@ -1,9 +1,7 @@
 {
   "enableEndpointIndependentMapping": true,
   "endpointTypes":[
-    {
-      "ENDPOINT_TYPE_VM"
-    }
+    "ENDPOINT_TYPE_VM"
   ],
   "icmpIdleTimeoutSec": 15,
   "minPortsPerVm": 128,
