@@ -84,7 +84,7 @@ Before this module can be used on a project, you must ensure that the following 
 ### Terraform plugins
 
 - [Terraform](https://www.terraform.io/downloads.html) >= 0.13.0
-- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) plugin v3.52.0
+- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) plugin v4.27.0
 
 ### Configure a Service Account
 
@@ -101,4 +101,4 @@ In order to operate with the Service Account you must activate the following API
 
 ## Contributing
 
-Refer to the [contribution guidelines](../CONTRIBUTING.md) for information on contributing to this module.
+Refer to the [contribution guidelines](./CONTRIBUTING.md) for information on contributing to this module.
