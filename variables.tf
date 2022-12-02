@@ -130,5 +130,5 @@ variable "enable_dynamic_port_allocation" {
 variable "enable_endpoint_independent_mapping" {
   type        = bool
   description = "Specifies if endpoint independent mapping is enabled."
-  default     = true
+  default     = null
 }
