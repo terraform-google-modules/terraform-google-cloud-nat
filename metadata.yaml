@@ -1,0 +1,160 @@
+# Copyright 2022 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+apiVersion: blueprints.cloud.google.com/v1alpha1
+kind: BlueprintMetadata
+metadata:
+  name: terraform-google-cloud-nat
+  annotations:
+    config.kubernetes.io/local-config: "true"
+spec:
+  title: Terraform Google Cloud NAT Module
+  source:
+    repo: https://github.com/terraform-google-modules/terraform-google-cloud-nat
+    sourceType: git
+  version: 2.2.1
+  actuationTool:
+    type: Terraform
+    version: '>= 0.13'
+  examples:
+  - name: advanced
+    location: examples/advanced
+  - name: basic
+    location: examples/basic
+  - name: nat_with_compute_engine
+    location: examples/nat_with_compute_engine
+  - name: nat_with_gke
+    location: examples/nat_with_gke
+  variables:
+  - name: create_router
+    description: Create router instead of using an existing one, uses 'router' variable for new resource name.
+    type: bool
+    default: false
+    required: false
+  - name: enable_endpoint_independent_mapping
+    description: Specifies if endpoint independent mapping is enabled.
+    type: bool
+    required: false
+  - name: icmp_idle_timeout_sec
+    description: Timeout (in seconds) for ICMP connections. Defaults to 30s if not set. Changing this forces a new NAT to be created.
+    type: string
+    default: "30"
+    required: false
+  - name: log_config_enable
+    description: Indicates whether or not to export logs
+    type: bool
+    default: false
+    required: false
+  - name: log_config_filter
+    description: 'Specifies the desired filtering of logs on this NAT. Valid values are: "ERRORS_ONLY", "TRANSLATIONS_ONLY", "ALL"'
+    type: string
+    default: ALL
+    required: false
+  - name: min_ports_per_vm
+    description: Minimum number of ports allocated to a VM from this NAT config. Defaults to 64 if not set. Changing this forces a new NAT to be created.
+    type: string
+    default: "64"
+    required: false
+  - name: name
+    description: Defaults to 'cloud-nat-RANDOM_SUFFIX'. Changing this forces a new NAT to be created.
+    type: string
+    default: ""
+    required: false
+  - name: nat_ip_allocate_option
+    description: Value inferred based on nat_ips. If present set to MANUAL_ONLY, otherwise AUTO_ONLY.
+    type: string
+    default: "false"
+    required: false
+  - name: nat_ips
+    description: List of self_links of external IPs. Changing this forces a new NAT to be created.
+    type: list(string)
+    default: []
+    required: false
+  - name: network
+    description: VPN name, only if router is not passed in and is created by the module.
+    type: string
+    default: ""
+    required: false
+  - name: project_id
+    description: The project ID to deploy to
+    type: string
+    required: true
+  - name: region
+    description: The region to deploy to
+    type: string
+    required: true
+  - name: router
+    description: The name of the router in which this NAT will be configured. Changing this forces a new NAT to be created.
+    type: string
+    required: true
+  - name: router_asn
+    description: Router ASN, only if router is not passed in and is created by the module.
+    type: string
+    default: "64514"
+    required: false
+  - name: router_keepalive_interval
+    description: Router keepalive_interval, only if router is not passed in and is created by the module.
+    type: string
+    default: "20"
+    required: false
+  - name: source_subnetwork_ip_ranges_to_nat
+    description: 'Defaults to ALL_SUBNETWORKS_ALL_IP_RANGES. How NAT should be configured per Subnetwork. Valid values include: ALL_SUBNETWORKS_ALL_IP_RANGES, ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, LIST_OF_SUBNETWORKS. Changing this forces a new NAT to be created.'
+    type: string
+    default: ALL_SUBNETWORKS_ALL_IP_RANGES
+    required: false
+  - name: subnetworks
+    description: Specifies one or more subnetwork NAT configurations
+    type: |-
+      list(object({
+          name                     = string,
+          source_ip_ranges_to_nat  = list(string)
+          secondary_ip_range_names = list(string)
+        }))
+    default: []
+    required: false
+  - name: tcp_established_idle_timeout_sec
+    description: Timeout (in seconds) for TCP established connections. Defaults to 1200s if not set. Changing this forces a new NAT to be created.
+    type: string
+    default: "1200"
+    required: false
+  - name: tcp_transitory_idle_timeout_sec
+    description: Timeout (in seconds) for TCP transitory connections. Defaults to 30s if not set. Changing this forces a new NAT to be created.
+    type: string
+    default: "30"
+    required: false
+  - name: udp_idle_timeout_sec
+    description: Timeout (in seconds) for UDP connections. Defaults to 30s if not set. Changing this forces a new NAT to be created.
+    type: string
+    default: "30"
+    required: false
+  outputs:
+  - name: name
+    description: Name of the Cloud NAT
+  - name: nat_ip_allocate_option
+    description: NAT IP allocation mode
+  - name: region
+    description: Cloud NAT region
+  - name: router_name
+    description: Cloud NAT router name
+  roles:
+  - level: Project
+    roles:
+    - roles/compute.networkAdmin
+    - roles/iam.serviceAccountUser
+    - roles/owner
+  services:
+  - cloudresourcemanager.googleapis.com
+  - storage-api.googleapis.com
+  - serviceusage.googleapis.com
+  - compute.googleapis.com
