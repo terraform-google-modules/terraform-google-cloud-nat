@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 Releases are automated via [Conventional Commit](https://www.conventionalcommits.org/) messages.
 
+## [2.2.2](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v2.2.1...v2.2.2) (2023-01-20)
+
+
+### Bug Fixes
+
+* fixes lint issues and generates metadata ([#94](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/94)) ([3896f11](https://github.com/terraform-google-modules/terraform-google-cloud-nat/commit/3896f113bcca73d4d2df9d17f829e51f3ef8f441))
+
 ### [2.2.1](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v2.2.0...v2.2.1) (2022-05-24)
 
 
