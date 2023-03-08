@@ -17,6 +17,7 @@
     }
   ],
   "tcpEstablishedIdleTimeoutSec": 600,
+  "tcpTimeWaitTimeoutSec": 120,
   "tcpTransitoryIdleTimeoutSec": 15,
   "udpIdleTimeoutSec": 15
 }
