@@ -9,6 +9,7 @@
   "natIpAllocateOption": "AUTO_ONLY",
   "sourceSubnetworkIpRangesToNat": "ALL_SUBNETWORKS_ALL_IP_RANGES",
   "tcpEstablishedIdleTimeoutSec": 1200,
+  "tcpTimeWaitTimeoutSec": 120,
   "tcpTransitoryIdleTimeoutSec": 30,
   "udpIdleTimeoutSec": 30
 }
