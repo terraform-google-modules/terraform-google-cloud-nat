@@ -1,3 +1,4 @@
+{
   "enableEndpointIndependentMapping": true,
   "endpointTypes":[
     "ENDPOINT_TYPE_VM"
