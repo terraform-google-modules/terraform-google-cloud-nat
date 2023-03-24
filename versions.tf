@@ -22,10 +22,15 @@ terraform {
       source  = "hashicorp/google"
       version = ">= 4.27, < 5.0"
     }
+
+    random = {
+      source  = "hashicorp/random"
+      version = "~> 3.0"
+    }
   }
 
   provider_meta "google" {
-    module_name = "blueprints/terraform/terraform-google-cloud-nat/v2.2.1"
+    module_name = "blueprints/terraform/terraform-google-cloud-nat/v2.2.2"
   }
 
 }

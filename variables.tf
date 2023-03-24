@@ -102,6 +102,7 @@ variable "udp_idle_timeout_sec" {
 }
 
 variable "subnetworks" {
+  description = "Specifies one or more subnetwork NAT configurations"
   type = list(object({
     name                     = string,
     source_ip_ranges_to_nat  = list(string)
