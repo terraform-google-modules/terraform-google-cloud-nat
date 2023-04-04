@@ -25,6 +25,7 @@ module "cloud-nat" {
   icmp_idle_timeout_sec              = "15"
   tcp_established_idle_timeout_sec   = "600"
   tcp_transitory_idle_timeout_sec    = "15"
+  tcp_time_wait_timeout_sec          = "240"
   udp_idle_timeout_sec               = "15"
   source_subnetwork_ip_ranges_to_nat = var.source_subnetwork_ip_ranges_to_nat
   subnetworks                        = var.subnetworks
