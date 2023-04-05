@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 Releases are automated via [Conventional Commit](https://www.conventionalcommits.org/) messages.
 
+## [3.0.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v2.2.2...v3.0.0) (2023-04-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* **TPG >= 4.51:** Support tcp_time_wait_timeout_sec ([#108](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/108))
+
+### Features
+
+* **TPG >= 4.51:** Support tcp_time_wait_timeout_sec ([#108](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/108)) ([20cf14b](https://github.com/terraform-google-modules/terraform-google-cloud-nat/commit/20cf14bc4466cde142229be3173faa65dbcb81a5))
+
 ## [2.2.2](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v2.2.1...v2.2.2) (2023-01-20)
 
 
