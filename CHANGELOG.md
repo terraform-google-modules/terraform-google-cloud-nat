@@ -11,6 +11,8 @@ Releases are automated via [Conventional Commit](https://www.conventionalcommits
 
 ### ⚠ BREAKING CHANGES
 
+* Increased minimum Google Provider version to 4.51 ([#108](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/108))
+
 * **TPG >= 4.51:** Support tcp_time_wait_timeout_sec ([#108](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/108))
 
 ### Features
