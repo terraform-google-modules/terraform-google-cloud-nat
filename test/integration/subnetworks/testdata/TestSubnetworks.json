@@ -1,5 +1,6 @@
 {
   "enableEndpointIndependentMapping": true,
+  "enableDynamicPortAllocation": false,
   "endpointTypes":[
     "ENDPOINT_TYPE_VM"
   ],

@@ -1,5 +1,5 @@
 /**
- * Copyright 2018 Google LLC
+ * Copyright 2018-2023 Google LLC
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -42,15 +42,9 @@ variable "name" {
   default     = ""
 }
 
-variable "nat_ip_allocate_option" {
-  type        = string
-  description = "Value inferred based on nat_ips. If present set to MANUAL_ONLY, otherwise AUTO_ONLY."
-  default     = "false"
-}
-
 variable "nat_ips" {
   type        = list(string)
-  description = "List of self_links of external IPs. Changing this forces a new NAT to be created."
+  description = "List of self_links of external IPs. Changing this forces a new NAT to be created. Value of `nat_ip_allocate_option` is inferred based on nat_ips. If present set to MANUAL_ONLY, otherwise AUTO_ONLY."
   default     = []
 }
 
@@ -134,6 +128,12 @@ variable "log_config_filter" {
   default     = "ALL"
 }
 
+variable "enable_dynamic_port_allocation" {
+  type        = bool
+  description = "Enable Dynamic Port Allocation. If minPorts is set, minPortsPerVm must be set to a power of two greater than or equal to 32."
+  default     = false
+
+}
 variable "enable_endpoint_independent_mapping" {
   type        = bool
   description = "Specifies if endpoint independent mapping is enabled."

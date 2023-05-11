@@ -41,14 +41,14 @@ Then perform the following commands on the root folder:
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | create\_router | Create router instead of using an existing one, uses 'router' variable for new resource name. | `bool` | `false` | no |
+| enable\_dynamic\_port\_allocation | Enable Dynamic Port Allocation. If minPorts is set, minPortsPerVm must be set to a power of two greater than or equal to 32. | `bool` | `false` | no |
 | enable\_endpoint\_independent\_mapping | Specifies if endpoint independent mapping is enabled. | `bool` | `null` | no |
 | icmp\_idle\_timeout\_sec | Timeout (in seconds) for ICMP connections. Defaults to 30s if not set. Changing this forces a new NAT to be created. | `string` | `"30"` | no |
 | log\_config\_enable | Indicates whether or not to export logs | `bool` | `false` | no |
 | log\_config\_filter | Specifies the desired filtering of logs on this NAT. Valid values are: "ERRORS\_ONLY", "TRANSLATIONS\_ONLY", "ALL" | `string` | `"ALL"` | no |
 | min\_ports\_per\_vm | Minimum number of ports allocated to a VM from this NAT config. Defaults to 64 if not set. Changing this forces a new NAT to be created. | `string` | `"64"` | no |
 | name | Defaults to 'cloud-nat-RANDOM\_SUFFIX'. Changing this forces a new NAT to be created. | `string` | `""` | no |
-| nat\_ip\_allocate\_option | Value inferred based on nat\_ips. If present set to MANUAL\_ONLY, otherwise AUTO\_ONLY. | `string` | `"false"` | no |
-| nat\_ips | List of self\_links of external IPs. Changing this forces a new NAT to be created. | `list(string)` | `[]` | no |
+| nat\_ips | List of self\_links of external IPs. Changing this forces a new NAT to be created. Value of `nat_ip_allocate_option` is inferred based on nat\_ips. If present set to MANUAL\_ONLY, otherwise AUTO\_ONLY. | `list(string)` | `[]` | no |
 | network | VPN name, only if router is not passed in and is created by the module. | `string` | `""` | no |
 | project\_id | The project ID to deploy to | `string` | n/a | yes |
 | region | The region to deploy to | `string` | n/a | yes |
@@ -85,7 +85,7 @@ Before this module can be used on a project, you must ensure that the following 
 ### Terraform plugins
 
 - [Terraform](https://www.terraform.io/downloads.html) >= 0.13.0
-- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) plugin v3.52.0
+- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) plugin v4.27.0
 
 ### Configure a Service Account
 
@@ -102,4 +102,4 @@ In order to operate with the Service Account you must activate the following API
 
 ## Contributing
 
-Refer to the [contribution guidelines](../CONTRIBUTING.md) for information on contributing to this module.
+Refer to the [contribution guidelines](./CONTRIBUTING.md) for information on contributing to this module.
