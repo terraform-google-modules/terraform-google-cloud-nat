@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 Releases are automated via [Conventional Commit](https://www.conventionalcommits.org/) messages.
 
+## [4.0.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v3.0.0...v4.0.0) (2023-06-12)
+
+
+### ⚠ BREAKING CHANGES
+
+* **removes nat_ip_allocate_option:** add dynamic port mapping ([#73](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/73))
+
+### Features
+
+* **removes nat_ip_allocate_option:** add dynamic port mapping ([#73](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/73)) ([0cf1d69](https://github.com/terraform-google-modules/terraform-google-cloud-nat/commit/0cf1d697e55153f46e58bd2cd9e518d9ad55ae36))
+
 ## [3.0.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v2.2.2...v3.0.0) (2023-04-05)
 
 
