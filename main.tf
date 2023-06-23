@@ -50,6 +50,7 @@ resource "google_compute_router_nat" "main" {
   nat_ips                             = var.nat_ips
   source_subnetwork_ip_ranges_to_nat  = var.source_subnetwork_ip_ranges_to_nat
   min_ports_per_vm                    = var.min_ports_per_vm
+  max_ports_per_vm                    = var.max_ports_per_vm
   udp_idle_timeout_sec                = var.udp_idle_timeout_sec
   icmp_idle_timeout_sec               = var.icmp_idle_timeout_sec
   tcp_established_idle_timeout_sec    = var.tcp_established_idle_timeout_sec
