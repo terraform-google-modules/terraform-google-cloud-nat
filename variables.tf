@@ -36,6 +36,12 @@ variable "min_ports_per_vm" {
   default     = "64"
 }
 
+variable "max_ports_per_vm" {
+  type        = string
+  description = "Maximum number of ports allocated to a VM from this NAT. This field can only be set when enableDynamicPortAllocation is enabled.This will be ignored if enable_dynamic_port_allocation is set to false."
+  default     = null
+}
+
 variable "name" {
   type        = string
   description = "Defaults to 'cloud-nat-RANDOM_SUFFIX'. Changing this forces a new NAT to be created."
