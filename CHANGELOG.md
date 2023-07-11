@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 Releases are automated via [Conventional Commit](https://www.conventionalcommits.org/) messages.
 
+## [4.1.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v4.0.0...v4.1.0) (2023-06-26)
+
+
+### Features
+
+* add support for max ports per vm ([#124](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/124)) ([8798307](https://github.com/terraform-google-modules/terraform-google-cloud-nat/commit/87983071598c0bf0625efcd0fc4c6628dc803118))
+
 ## [4.0.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v3.0.0...v4.0.0) (2023-06-12)
 
 
