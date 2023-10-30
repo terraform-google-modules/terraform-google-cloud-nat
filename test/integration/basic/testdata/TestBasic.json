@@ -1,6 +1,6 @@
 {
   "autoNetworkTier": "PREMIUM",
-  "enableEndpointIndependentMapping": true,
+  "enableEndpointIndependentMapping": false,
   "enableDynamicPortAllocation": false,
   "endpointTypes": [
     "ENDPOINT_TYPE_VM"
