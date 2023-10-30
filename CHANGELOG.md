@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 Releases are automated via [Conventional Commit](https://www.conventionalcommits.org/) messages.
 
+## [5.0.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v4.1.0...v5.0.0) (2023-10-30)
+
+
+### ⚠ BREAKING CHANGES
+
+* **enable_endpoint_independent_mapping=false:** upgraded versions.tf to include minor bumps from tpg v5 ([#129](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/129))
+
+### Bug Fixes
+
+* **enable_endpoint_independent_mapping=false:** upgraded versions.tf to include minor bumps from tpg v5 ([#129](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/129)) ([30bcb56](https://github.com/terraform-google-modules/terraform-google-cloud-nat/commit/30bcb56e1e8994e0d14b2b4cd79941d432a0a891))
+
 ## [4.1.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v4.0.0...v4.1.0) (2023-06-26)
 
 
