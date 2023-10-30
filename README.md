@@ -21,7 +21,7 @@ There are multiple examples included in the [examples](./examples/) folder but s
 ```hcl
 module "cloud-nat" {
   source     = "terraform-google-modules/cloud-nat/google"
-  version    = "~> 4.1"
+  version    = "~> 5.0"
   project_id = var.project_id
   region     = var.region
   router     = google_compute_router.router.name
