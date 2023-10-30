@@ -21,7 +21,7 @@ There are multiple examples included in the [examples](./examples/) folder but s
 ```hcl
 module "cloud-nat" {
   source     = "terraform-google-modules/cloud-nat/google"
-  version    = "~> 1.2"
+  version    = "~> 5.0"
   project_id = var.project_id
   region     = var.region
   router     = google_compute_router.router.name
@@ -42,7 +42,7 @@ Then perform the following commands on the root folder:
 |------|-------------|------|---------|:--------:|
 | create\_router | Create router instead of using an existing one, uses 'router' variable for new resource name. | `bool` | `false` | no |
 | enable\_dynamic\_port\_allocation | Enable Dynamic Port Allocation. If minPorts is set, minPortsPerVm must be set to a power of two greater than or equal to 32. | `bool` | `false` | no |
-| enable\_endpoint\_independent\_mapping | Specifies if endpoint independent mapping is enabled. | `bool` | `null` | no |
+| enable\_endpoint\_independent\_mapping | Specifies if endpoint independent mapping is enabled. | `bool` | `false` | no |
 | icmp\_idle\_timeout\_sec | Timeout (in seconds) for ICMP connections. Defaults to 30s if not set. Changing this forces a new NAT to be created. | `string` | `"30"` | no |
 | log\_config\_enable | Indicates whether or not to export logs | `bool` | `false` | no |
 | log\_config\_filter | Specifies the desired filtering of logs on this NAT. Valid values are: "ERRORS\_ONLY", "TRANSLATIONS\_ONLY", "ALL" | `string` | `"ALL"` | no |
@@ -86,7 +86,7 @@ Before this module can be used on a project, you must ensure that the following 
 ### Terraform plugins
 
 - [Terraform](https://www.terraform.io/downloads.html) >= 0.13.0
-- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) plugin v4.27.0
+- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) plugin v4.51.0
 
 ### Configure a Service Account
 
