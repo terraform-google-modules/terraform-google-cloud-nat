@@ -21,7 +21,7 @@ There are multiple examples included in the [examples](./examples/) folder but s
 ```hcl
 module "cloud-nat" {
   source     = "terraform-google-modules/cloud-nat/google"
-  version    = "~> 1.2"
+  version    = "~> 4.1"
   project_id = var.project_id
   region     = var.region
   router     = google_compute_router.router.name
@@ -86,7 +86,7 @@ Before this module can be used on a project, you must ensure that the following 
 ### Terraform plugins
 
 - [Terraform](https://www.terraform.io/downloads.html) >= 0.13.0
-- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) plugin v4.27.0
+- [terraform-provider-google](https://github.com/terraform-providers/terraform-provider-google) plugin v4.51.0
 
 ### Configure a Service Account
 
