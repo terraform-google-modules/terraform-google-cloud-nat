@@ -1,6 +1,6 @@
 {
-  "enableEndpointIndependentMapping": false,
   "enableDynamicPortAllocation": false,
+  "enableEndpointIndependentMapping": false,
   "endpointTypes": [
     "ENDPOINT_TYPE_VM"
   ],
@@ -12,5 +12,6 @@
   "tcpEstablishedIdleTimeoutSec": 600,
   "tcpTimeWaitTimeoutSec": 240,
   "tcpTransitoryIdleTimeoutSec": 15,
+  "type": "PUBLIC",
   "udpIdleTimeoutSec": 15
 }
