@@ -1,7 +1,7 @@
 {
   "autoNetworkTier": "PREMIUM",
-  "enableEndpointIndependentMapping": false,
   "enableDynamicPortAllocation": false,
+  "enableEndpointIndependentMapping": false,
   "endpointTypes": [
     "ENDPOINT_TYPE_VM"
   ],
@@ -13,5 +13,6 @@
   "tcpEstablishedIdleTimeoutSec": 1200,
   "tcpTimeWaitTimeoutSec": 120,
   "tcpTransitoryIdleTimeoutSec": 30,
+  "type": "PUBLIC",
   "udpIdleTimeoutSec": 30
 }
