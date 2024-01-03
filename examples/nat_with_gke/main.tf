@@ -17,7 +17,7 @@
 # [START vpc_network_nat_gke]
 module "test-vpc-module" {
   source       = "terraform-google-modules/network/google"
-  version      = "~> 7.0"
+  version      = "~> 8.0"
   project_id   = var.project_id # Replace this with your project ID in quotes
   network_name = "custom-network1"
   mtu          = 1460
@@ -77,7 +77,7 @@ resource "google_compute_router" "router" {
 # [START cloudnat_nat_gke]
 module "cloud-nat" {
   source                             = "terraform-google-modules/cloud-nat/google"
-  version                            = "~> 4.0"
+  version                            = "~> 5.0"
   project_id                         = var.project_id
   region                             = "us-east4"
   router                             = google_compute_router.router.name
