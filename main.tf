@@ -35,7 +35,7 @@ resource "google_compute_router" "router" {
   project = var.project_id
   region  = var.region
   network = var.network
-  
+
   dynamic "bgp" {
     for_each = var.router_asn != null ? [{
       asn                = var.router_asn
