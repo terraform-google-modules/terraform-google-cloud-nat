@@ -35,9 +35,16 @@ resource "google_compute_router" "router" {
   project = var.project_id
   region  = var.region
   network = var.network
-  bgp {
-    asn                = var.router_asn
-    keepalive_interval = var.router_keepalive_interval
+
+  dynamic "bgp" {
+    for_each = var.router_asn != null ? [{
+      asn                = var.router_asn
+      keepalive_interval = var.router_keepalive_interval
+    }] : []
+    content {
+      asn                = bgp.value.asn
+      keepalive_interval = bgp.value.keepalive_interval
+    }
   }
 }
 
