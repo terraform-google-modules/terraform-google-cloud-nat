@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 Releases are automated via [Conventional Commit](https://www.conventionalcommits.org/) messages.
 
+## [5.1.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v5.0.0...v5.1.0) (2024-05-03)
+
+
+### Features
+
+* `bgp` block can now be optional ([#152](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/152)) ([4069d68](https://github.com/terraform-google-modules/terraform-google-cloud-nat/commit/4069d68374526e039912dd70b2613206438e0d0e))
+
 ## [5.0.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v4.1.0...v5.0.0) (2023-10-30)
 
 
