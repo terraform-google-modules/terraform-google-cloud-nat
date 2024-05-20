@@ -16,7 +16,7 @@
 
 module "project_cloud_nat" {
   source  = "terraform-google-modules/project-factory/google"
-  version = "~> 14.0"
+  version = "~> 15.0"
 
   name              = "ci-cloud-nat"
   random_project_id = true
