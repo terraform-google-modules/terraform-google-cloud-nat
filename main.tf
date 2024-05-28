@@ -86,4 +86,17 @@ resource "google_compute_router_nat" "main" {
       filter = log_config.value.filter
     }
   }
+
+  dynamic "rules" {
+    for_each = var.rules
+    content {
+      rule_number = rules.value.rule_number
+      description = rules.value.description
+      match       = rules.value.match
+      action {
+        source_nat_active_ips = rules.value.action.source_nat_active_ips
+        source_nat_drain_ips  = rules.value.action.source_nat_drain_ips
+      }
+    }
+  }
 }

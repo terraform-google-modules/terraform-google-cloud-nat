@@ -145,3 +145,17 @@ variable "enable_endpoint_independent_mapping" {
   description = "Specifies if endpoint independent mapping is enabled."
   default     = false
 }
+
+variable "rules" {
+  description = "Specifies one or more rules associated with this NAT."
+  type = list(object({
+    description = string
+    match       = string
+    rule_number = number
+    action = object({
+      source_nat_active_ips = list(string)
+      source_nat_drain_ips  = list(string)
+    })
+  }))
+  default = []
+}
