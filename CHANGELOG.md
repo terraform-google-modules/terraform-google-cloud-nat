@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 Releases are automated via [Conventional Commit](https://www.conventionalcommits.org/) messages.
 
+## [5.2.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v5.1.0...v5.2.0) (2024-05-29)
+
+
+### Features
+
+* add rules support ([#157](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/157)) ([3fb071c](https://github.com/terraform-google-modules/terraform-google-cloud-nat/commit/3fb071c485e3e28eeea9a8ef18956e7c9e8db3ec))
+
 ## [5.1.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v5.0.0...v5.1.0) (2024-05-03)
 
 
