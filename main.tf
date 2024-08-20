@@ -55,6 +55,7 @@ resource "google_compute_router_nat" "main" {
   router                              = local.router
   nat_ip_allocate_option              = local.nat_ip_allocate_option
   nat_ips                             = var.nat_ips
+  drain_nat_ips                       = var.drain_nat_ips
   source_subnetwork_ip_ranges_to_nat  = var.source_subnetwork_ip_ranges_to_nat
   min_ports_per_vm                    = var.min_ports_per_vm
   max_ports_per_vm                    = var.enable_dynamic_port_allocation ? var.max_ports_per_vm : null
