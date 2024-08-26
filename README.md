@@ -41,6 +41,7 @@ Then perform the following commands on the root folder:
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | create\_router | Create router instead of using an existing one, uses 'router' variable for new resource name. | `bool` | `false` | no |
+| drain\_nat\_ips | A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT. | `list(string)` | `[]` | no |
 | enable\_dynamic\_port\_allocation | Enable Dynamic Port Allocation. If minPorts is set, minPortsPerVm must be set to a power of two greater than or equal to 32. | `bool` | `false` | no |
 | enable\_endpoint\_independent\_mapping | Specifies if endpoint independent mapping is enabled. | `bool` | `false` | no |
 | icmp\_idle\_timeout\_sec | Timeout (in seconds) for ICMP connections. Defaults to 30s if not set. Changing this forces a new NAT to be created. | `string` | `"30"` | no |

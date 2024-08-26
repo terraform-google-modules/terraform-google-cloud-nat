@@ -54,6 +54,12 @@ variable "nat_ips" {
   default     = []
 }
 
+variable "drain_nat_ips" {
+  type        = list(string)
+  description = "A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT."
+  default     = []
+}
+
 variable "network" {
   type        = string
   description = "VPN name, only if router is not passed in and is created by the module."
