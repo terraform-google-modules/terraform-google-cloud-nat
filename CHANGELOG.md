@@ -6,6 +6,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 Releases are automated via [Conventional Commit](https://www.conventionalcommits.org/) messages.
 
+## [5.3.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v5.2.0...v5.3.0) (2024-08-29)
+
+
+### Features
+
+* add drain_nat_ips support ([#162](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/162)) ([0c4206d](https://github.com/terraform-google-modules/terraform-google-cloud-nat/commit/0c4206d718003ff3f5e05ef7884e9ae6793c9279))
+* **deps:** Update Terraform google to v6 ([#166](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/166)) ([f72ddeb](https://github.com/terraform-google-modules/terraform-google-cloud-nat/commit/f72ddeb3703eec6eb5306f178a0c2df0338b10d0))
+
 ## [5.2.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v5.1.0...v5.2.0) (2024-05-29)
 
 
