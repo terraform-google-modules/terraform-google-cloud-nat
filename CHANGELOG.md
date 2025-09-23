@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 Releases are automated via [Conventional Commit](https://www.conventionalcommits.org/) messages.
 
+## [5.4.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v5.3.0...v5.4.0) (2025-09-23)
+
+
+### Features
+
+* **deps:** Update Terraform google to v7 ([#180](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/180)) ([aa876df](https://github.com/terraform-google-modules/terraform-google-cloud-nat/commit/aa876dffeb7f82fc369de36deda71865f9ce9add))
+
 ## [5.3.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v5.2.0...v5.3.0) (2024-08-29)
 
 
