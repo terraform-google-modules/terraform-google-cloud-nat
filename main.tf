@@ -15,18 +15,19 @@
  */
 
 resource "random_string" "name_suffix" {
+  count = var.name == "" ? 1 : 0
+
   length  = 6
   upper   = false
   special = false
 }
 
 locals {
-  # intermediate locals
-  default_name = "cloud-nat-${random_string.name_suffix.result}"
   # locals for google_compute_router_nat
   nat_ip_allocate_option = length(var.nat_ips) > 0 ? "MANUAL_ONLY" : "AUTO_ONLY"
-  name                   = var.name != "" ? var.name : local.default_name
-  router                 = var.create_router ? google_compute_router.router[0].name : var.router
+  # use default name if name is empty
+  name   = var.name != "" ? var.name : "cloud-nat-${random_string.name_suffix[0].result}"
+  router = var.create_router ? google_compute_router.router[0].name : var.router
 }
 
 resource "google_compute_router" "router" {
