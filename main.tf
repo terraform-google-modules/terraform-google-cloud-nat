@@ -25,7 +25,6 @@ locals {
   default_name = "cloud-nat-${random_string.name_suffix.result}"
   # locals for google_compute_router_nat
   nat_ip_allocate_option = length(var.nat_ips) > 0 ? "MANUAL_ONLY" : "AUTO_ONLY"
-  min_ports_per_vm       = var.min_ports_per_vm != null ? var.min_ports_per_vm : (var.enable_dynamic_port_allocation ? "32" : "64")
   name                   = var.name != "" ? var.name : local.default_name
   router                 = var.create_router ? google_compute_router.router[0].name : var.router
 }
@@ -58,7 +57,7 @@ resource "google_compute_router_nat" "main" {
   nat_ips                             = var.nat_ips
   drain_nat_ips                       = var.drain_nat_ips
   source_subnetwork_ip_ranges_to_nat  = var.source_subnetwork_ip_ranges_to_nat
-  min_ports_per_vm                    = local.min_ports_per_vm
+  min_ports_per_vm                    = var.min_ports_per_vm
   max_ports_per_vm                    = var.enable_dynamic_port_allocation ? var.max_ports_per_vm : null
   udp_idle_timeout_sec                = var.udp_idle_timeout_sec
   icmp_idle_timeout_sec               = var.icmp_idle_timeout_sec
