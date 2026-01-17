@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 Releases are automated via [Conventional Commit](https://www.conventionalcommits.org/) messages.
 
+## [6.0.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v5.4.0...v6.0.0) (2026-01-17)
+
+
+### ⚠ BREAKING CHANGES
+
+* Change min_ports_per_vm default value to NULL ([#185](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/185))
+
+### Features
+
+* Change min_ports_per_vm default value to NULL ([#185](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/185)) ([4a2ba3a](https://github.com/terraform-google-modules/terraform-google-cloud-nat/commit/4a2ba3a435b8764f4f9701c3ae75a74919cab605))
+
 ## [5.4.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v5.3.0...v5.4.0) (2025-09-23)
 
 
