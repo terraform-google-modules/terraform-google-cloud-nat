@@ -32,8 +32,8 @@ variable "icmp_idle_timeout_sec" {
 
 variable "min_ports_per_vm" {
   type        = string
-  description = "Minimum number of ports allocated to a VM from this NAT config. Defaults to 64 if not set. Changing this forces a new NAT to be created."
-  default     = "64"
+  description = "Minimum number of ports allocated to a VM from this NAT config. Defaults to 64 if enable_dynamic_port_allocation is false, 32 if true. Changing this forces a new NAT to be created."
+  default     = null
 }
 
 variable "max_ports_per_vm" {
