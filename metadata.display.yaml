@@ -1,0 +1,125 @@
+# Copyright 2025 Google LLC
+#
+# Licensed under the Apache License, Version 2.0 (the "License");
+# you may not use this file except in compliance with the License.
+# You may obtain a copy of the License at
+#
+#      http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+apiVersion: blueprints.cloud.google.com/v1alpha1
+kind: BlueprintMetadata
+metadata:
+  name: terraform-google-cloud-nat-display
+  annotations:
+    config.kubernetes.io/local-config: "true"
+spec:
+  info:
+    title: Terraform Google Cloud NAT Module
+    source:
+      repo: https://github.com/yuktatechgog/terraform-google-cloud-nat.git
+      sourceType: git
+  ui:
+    input:
+      variables:
+        create_router:
+          name: create_router
+          title: Create Router
+        drain_nat_ips:
+          name: drain_nat_ips
+          title: Drain Nat Ips
+        enable_dynamic_port_allocation:
+          name: enable_dynamic_port_allocation
+          title: Enable Dynamic Port Allocation
+        enable_endpoint_independent_mapping:
+          name: enable_endpoint_independent_mapping
+          title: Enable Endpoint Independent Mapping
+        icmp_idle_timeout_sec:
+          name: icmp_idle_timeout_sec
+          title: Icmp Idle Timeout Sec
+        log_config_enable:
+          name: log_config_enable
+          title: Log Config Enable
+          level: 1
+        log_config_filter:
+          name: log_config_filter
+          title: Log Config Filter
+          enumValueLabels:
+            - label: Log errors only
+              value: ERRORS_ONLY
+            - label: Log translations only
+              value: TRANSLATIONS_ONLY
+            - label: Log all traffic
+              value: ALL
+        max_ports_per_vm:
+          name: max_ports_per_vm
+          title: Max Ports Per Vm
+        min_ports_per_vm:
+          name: min_ports_per_vm
+          title: Min Ports Per Vm
+        name:
+          name: name
+          title: Name
+          level: 1
+        nat_ips:
+          name: nat_ips
+          title: Nat Ips
+          level: 1
+        network:
+          name: network
+          title: Network
+        project_id:
+          name: project_id
+          title: Project Id
+        region:
+          name: region
+          title: Region
+        router:
+          name: router
+          title: Router
+        router_asn:
+          name: router_asn
+          title: Router Asn
+        router_keepalive_interval:
+          name: router_keepalive_interval
+          title: Router Keepalive Interval
+        rules:
+          name: rules
+          title: Rules
+        source_subnetwork_ip_ranges_to_nat:
+          name: source_subnetwork_ip_ranges_to_nat
+          title: Source Subnetwork Ip Ranges To Nat
+          level: 1
+          enumValueLabels:
+            - label: All subnetworks, all IP ranges
+              value: ALL_SUBNETWORKS_ALL_IP_RANGES
+            - label: All subnetworks, primary IP ranges only
+              value: ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES
+            - label: Custom list of subnetworks
+              value: LIST_OF_SUBNETWORKS
+        subnetworks:
+          name: subnetworks
+          title: Subnetworks
+        tcp_established_idle_timeout_sec:
+          name: tcp_established_idle_timeout_sec
+          title: Tcp Established Idle Timeout Sec
+        tcp_time_wait_timeout_sec:
+          name: tcp_time_wait_timeout_sec
+          title: Tcp Time Wait Timeout Sec
+        tcp_transitory_idle_timeout_sec:
+          name: tcp_transitory_idle_timeout_sec
+          title: Tcp Transitory Idle Timeout Sec
+        udp_idle_timeout_sec:
+          name: udp_idle_timeout_sec
+          title: Udp Idle Timeout Sec
+    runtime:
+      outputs:
+        name:
+          visibility: VISIBILITY_ROOT
+        router_name:
+          visibility: VISIBILITY_ROOT

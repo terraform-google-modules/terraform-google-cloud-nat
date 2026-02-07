@@ -1,4 +1,4 @@
-# Copyright 2022 Google LLC
+# Copyright 2025 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,142 +19,188 @@ metadata:
   annotations:
     config.kubernetes.io/local-config: "true"
 spec:
-  title: Terraform Google Cloud NAT Module
-  source:
-    repo: https://github.com/terraform-google-modules/terraform-google-cloud-nat
-    sourceType: git
-  version: 6.0.0
-  actuationTool:
-    type: Terraform
-    version: '>= 0.13'
-  examples:
-  - name: advanced
-    location: examples/advanced
-  - name: basic
-    location: examples/basic
-  - name: nat_with_compute_engine
-    location: examples/nat_with_compute_engine
-  - name: nat_with_gke
-    location: examples/nat_with_gke
-  variables:
-  - name: create_router
-    description: Create router instead of using an existing one, uses 'router' variable for new resource name.
-    type: bool
-    default: false
-    required: false
-  - name: enable_endpoint_independent_mapping
-    description: Specifies if endpoint independent mapping is enabled.
-    type: bool
-    required: false
-  - name: icmp_idle_timeout_sec
-    description: Timeout (in seconds) for ICMP connections. Defaults to 30s if not set. Changing this forces a new NAT to be created.
-    type: string
-    default: "30"
-    required: false
-  - name: log_config_enable
-    description: Indicates whether or not to export logs
-    type: bool
-    default: false
-    required: false
-  - name: log_config_filter
-    description: 'Specifies the desired filtering of logs on this NAT. Valid values are: "ERRORS_ONLY", "TRANSLATIONS_ONLY", "ALL"'
-    type: string
-    default: ALL
-    required: false
-  - name: min_ports_per_vm
-    description: Minimum number of ports allocated to a VM from this NAT config. Defaults to 64 if not set. Changing this forces a new NAT to be created.
-    type: string
-    default: "64"
-    required: false
-  - name: name
-    description: Defaults to 'cloud-nat-RANDOM_SUFFIX'. Changing this forces a new NAT to be created.
-    type: string
-    default: ""
-    required: false
-  - name: nat_ip_allocate_option
-    description: Value inferred based on nat_ips. If present set to MANUAL_ONLY, otherwise AUTO_ONLY.
-    type: string
-    default: "false"
-    required: false
-  - name: nat_ips
-    description: List of self_links of external IPs. Changing this forces a new NAT to be created.
-    type: list(string)
-    default: []
-    required: false
-  - name: network
-    description: VPN name, only if router is not passed in and is created by the module.
-    type: string
-    default: ""
-    required: false
-  - name: project_id
-    description: The project ID to deploy to
-    type: string
-    required: true
-  - name: region
-    description: The region to deploy to
-    type: string
-    required: true
-  - name: router
-    description: The name of the router in which this NAT will be configured. Changing this forces a new NAT to be created.
-    type: string
-    required: true
-  - name: router_asn
-    description: Router ASN, only if router is not passed in and is created by the module.
-    type: string
-    default: "64514"
-    required: false
-  - name: router_keepalive_interval
-    description: Router keepalive_interval, only if router is not passed in and is created by the module.
-    type: string
-    default: "20"
-    required: false
-  - name: source_subnetwork_ip_ranges_to_nat
-    description: 'Defaults to ALL_SUBNETWORKS_ALL_IP_RANGES. How NAT should be configured per Subnetwork. Valid values include: ALL_SUBNETWORKS_ALL_IP_RANGES, ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, LIST_OF_SUBNETWORKS. Changing this forces a new NAT to be created.'
-    type: string
-    default: ALL_SUBNETWORKS_ALL_IP_RANGES
-    required: false
-  - name: subnetworks
-    description: Specifies one or more subnetwork NAT configurations
-    type: |-
-      list(object({
-          name                     = string,
-          source_ip_ranges_to_nat  = list(string)
-          secondary_ip_range_names = list(string)
-        }))
-    default: []
-    required: false
-  - name: tcp_established_idle_timeout_sec
-    description: Timeout (in seconds) for TCP established connections. Defaults to 1200s if not set. Changing this forces a new NAT to be created.
-    type: string
-    default: "1200"
-    required: false
-  - name: tcp_transitory_idle_timeout_sec
-    description: Timeout (in seconds) for TCP transitory connections. Defaults to 30s if not set. Changing this forces a new NAT to be created.
-    type: string
-    default: "30"
-    required: false
-  - name: udp_idle_timeout_sec
-    description: Timeout (in seconds) for UDP connections. Defaults to 30s if not set. Changing this forces a new NAT to be created.
-    type: string
-    default: "30"
-    required: false
-  outputs:
-  - name: name
-    description: Name of the Cloud NAT
-  - name: nat_ip_allocate_option
-    description: NAT IP allocation mode
-  - name: region
-    description: Cloud NAT region
-  - name: router_name
-    description: Cloud NAT router name
-  roles:
-  - level: Project
+  info:
+    title: Terraform Google Cloud NAT Module
+    source:
+      repo: https://github.com/terraform-google-modules/terraform-google-cloud-nat
+      sourceType: git
+    version: 6.0.0
+    actuationTool:
+      flavor: Terraform
+      version: ">= 0.13"
+    description: {}
+  content:
+    examples:
+      - name: advanced
+        location: examples/advanced
+      - name: basic
+        location: examples/basic
+      - name: nat_with_compute_engine
+        location: examples/nat_with_compute_engine
+      - name: nat_with_gke
+        location: examples/nat_with_gke
+  interfaces:
+    variables:
+      - name: project_id
+        description: The project ID to deploy to
+        varType: string
+        required: true
+      - name: region
+        description: The region to deploy to
+        varType: string
+        required: true
+      - name: icmp_idle_timeout_sec
+        description: Timeout (in seconds) for ICMP connections. Defaults to 30s if not set. Changing this forces a new NAT to be created.
+        varType: string
+        defaultValue: "30"
+      - name: min_ports_per_vm
+        description: Minimum number of ports allocated to a VM from this NAT config. Defaults to 64 if not set. Changing this forces a new NAT to be created.
+        varType: string
+      - name: max_ports_per_vm
+        description: Maximum number of ports allocated to a VM from this NAT. This field can only be set when enableDynamicPortAllocation is enabled.This will be ignored if enable_dynamic_port_allocation is set to false.
+        varType: string
+      - name: name
+        description: Defaults to 'cloud-nat-RANDOM_SUFFIX'. Changing this forces a new NAT to be created.
+        varType: string
+        defaultValue: ""
+      - name: nat_ips
+        description: List of self_links of external IPs. Changing this forces a new NAT to be created. Value of `nat_ip_allocate_option` is inferred based on nat_ips. If present set to MANUAL_ONLY, otherwise AUTO_ONLY.
+        varType: list(string)
+        defaultValue: []
+        connections:
+          - source:
+              source: github.com/terraform-google-modules/terraform-google-address
+              version: ">= 4.0.0"
+            spec:
+              outputExpr: self_links
+      - name: drain_nat_ips
+        description: A list of URLs of the IP resources to be drained. These IPs must be valid static external IPs that have been assigned to the NAT.
+        varType: list(string)
+        defaultValue: []
+      - name: network
+        description: VPN name, only if router is not passed in and is created by the module.
+        varType: string
+        defaultValue: ""
+        connections:
+          - source:
+              source: github.com/terraform-google-modules/terraform-google-network
+              version: ">= 12.0.0"
+            spec:
+              outputExpr: network_name
+          - source:
+              source: github.com/terraform-google-modules/terraform-google-network//modules/vpc
+              version: ">= 12.0.0"
+            spec:
+              outputExpr: network_name
+      - name: create_router
+        description: Create router instead of using an existing one, uses 'router' variable for new resource name.
+        varType: bool
+        defaultValue: false
+      - name: router
+        description: The name of the router in which this NAT will be configured. Changing this forces a new NAT to be created.
+        varType: string
+        required: true
+        connections:
+          - source:
+              source: github.com/terraform-google-modules/terraform-google-cloud-router
+              version: ">= 8.0.0"
+            spec:
+              outputExpr: router.name
+      - name: router_asn
+        description: Router ASN, only if router is not passed in and is created by the module.
+        varType: string
+        defaultValue: "64514"
+      - name: router_keepalive_interval
+        description: Router keepalive_interval, only if router is not passed in and is created by the module.
+        varType: string
+        defaultValue: "20"
+      - name: source_subnetwork_ip_ranges_to_nat
+        description: "Defaults to ALL_SUBNETWORKS_ALL_IP_RANGES. How NAT should be configured per Subnetwork. Valid values include: ALL_SUBNETWORKS_ALL_IP_RANGES, ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES, LIST_OF_SUBNETWORKS. Changing this forces a new NAT to be created."
+        varType: string
+        defaultValue: ALL_SUBNETWORKS_ALL_IP_RANGES
+      - name: tcp_established_idle_timeout_sec
+        description: Timeout (in seconds) for TCP established connections. Defaults to 1200s if not set. Changing this forces a new NAT to be created.
+        varType: string
+        defaultValue: "1200"
+      - name: tcp_transitory_idle_timeout_sec
+        description: Timeout (in seconds) for TCP transitory connections. Defaults to 30s if not set. Changing this forces a new NAT to be created.
+        varType: string
+        defaultValue: "30"
+      - name: tcp_time_wait_timeout_sec
+        description: Timeout (in seconds) for TCP connections that are in TIME_WAIT state. Defaults to 120s if not set.
+        varType: string
+        defaultValue: "120"
+      - name: udp_idle_timeout_sec
+        description: Timeout (in seconds) for UDP connections. Defaults to 30s if not set. Changing this forces a new NAT to be created.
+        varType: string
+        defaultValue: "30"
+      - name: subnetworks
+        description: Specifies one or more subnetwork NAT configurations
+        varType: |-
+          list(object({
+              name                     = string,
+              source_ip_ranges_to_nat  = list(string)
+              secondary_ip_range_names = list(string)
+            }))
+        defaultValue: []
+      - name: log_config_enable
+        description: Indicates whether or not to export logs
+        varType: bool
+        defaultValue: false
+      - name: log_config_filter
+        description: "Specifies the desired filtering of logs on this NAT. Valid values are: \"ERRORS_ONLY\", \"TRANSLATIONS_ONLY\", \"ALL\""
+        varType: string
+        defaultValue: ALL
+      - name: enable_dynamic_port_allocation
+        description: Enable Dynamic Port Allocation. If minPorts is set, minPortsPerVm must be set to a power of two greater than or equal to 32.
+        varType: bool
+        defaultValue: false
+      - name: enable_endpoint_independent_mapping
+        description: Specifies if endpoint independent mapping is enabled.
+        varType: bool
+        defaultValue: false
+      - name: rules
+        description: Specifies one or more rules associated with this NAT.
+        varType: |-
+          list(object({
+              description = string
+              match       = string
+              rule_number = number
+              action = object({
+                source_nat_active_ips = list(string)
+                source_nat_drain_ips  = list(string)
+              })
+            }))
+        defaultValue: []
+    outputs:
+      - name: name
+        description: Name of the Cloud NAT
+        type: string
+      - name: nat_ip_allocate_option
+        description: NAT IP allocation mode
+        type: string
+      - name: region
+        description: Cloud NAT region
+        type: string
+      - name: router_name
+        description: Cloud NAT router name
+        type: string
+  requirements:
     roles:
-    - roles/compute.networkAdmin
-    - roles/iam.serviceAccountUser
-    - roles/owner
-  services:
-  - cloudresourcemanager.googleapis.com
-  - storage-api.googleapis.com
-  - serviceusage.googleapis.com
-  - compute.googleapis.com
+      - level: Project
+        roles:
+          - roles/compute.networkAdmin
+          - roles/iam.serviceAccountUser
+          - roles/iam.serviceAccountAdmin
+          - roles/resourcemanager.projectIamAdmin
+          - roles/serviceusage.serviceUsageAdmin
+    services:
+      - cloudresourcemanager.googleapis.com
+      - storage-api.googleapis.com
+      - serviceusage.googleapis.com
+      - compute.googleapis.com
+    providerVersions:
+      - source: hashicorp/google
+        version: ">= 4.51, < 8"
+      - source: hashicorp/random
+        version: ~> 3.0
