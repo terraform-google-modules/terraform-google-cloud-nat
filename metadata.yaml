@@ -1,4 +1,4 @@
-# Copyright 2025 Google LLC
+# Copyright 2026 Google LLC
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -54,7 +54,7 @@ spec:
         varType: string
         defaultValue: "30"
       - name: min_ports_per_vm
-        description: Minimum number of ports allocated to a VM from this NAT config. Defaults to 64 if not set. Changing this forces a new NAT to be created.
+        description: Minimum number of ports allocated to a VM from this NAT config. Defaults to 64 if enable_dynamic_port_allocation is false, 32 if true. Changing this forces a new NAT to be created.
         varType: string
       - name: max_ports_per_vm
         description: Maximum number of ports allocated to a VM from this NAT. This field can only be set when enableDynamicPortAllocation is enabled.This will be ignored if enable_dynamic_port_allocation is set to false.

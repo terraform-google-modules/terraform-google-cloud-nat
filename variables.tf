@@ -26,8 +26,8 @@ variable "region" {
 
 variable "icmp_idle_timeout_sec" {
   type        = string
-  description = "Minimum number of ports allocated to a VM from this NAT config. Defaults to 64 if enable_dynamic_port_allocation is false, 32 if true. Changing this forces a new NAT to be created."
-  default     = null
+  description = "Timeout (in seconds) for ICMP connections. Defaults to 30s if not set. Changing this forces a new NAT to be created."
+  default     = "30"
 }
 
 variable "min_ports_per_vm" {
