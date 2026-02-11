@@ -30,7 +30,7 @@ terraform {
   }
 
   provider_meta "google" {
-    module_name = "blueprints/terraform/terraform-google-cloud-nat/v6.0.0"
+    module_name = "blueprints/terraform/terraform-google-cloud-nat/v7.0.0"
   }
 
 }
