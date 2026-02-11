@@ -78,7 +78,7 @@ spec:
         varType: list(string)
         defaultValue: []
       - name: network
-        description: VPN name, only if router is not passed in and is created by the module.
+        description: VPN name, only if router is being created by the module.
         varType: string
         defaultValue: ""
         connections:
@@ -107,7 +107,7 @@ spec:
             spec:
               outputExpr: router.name
       - name: router_asn
-        description: Router ASN, only if router is not passed in and is created by the module.
+        description: Router ASN, only if create_router is true.
         varType: string
         defaultValue: "64514"
       - name: router_keepalive_interval
