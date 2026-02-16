@@ -17,7 +17,7 @@
 # [START vpc_network_nat_gke]
 module "test-vpc-module" {
   source       = "terraform-google-modules/network/google"
-  version      = "~> 13.0"
+  version      = "~> 15.0"
   project_id   = var.project_id # Replace this with your project ID in quotes
   network_name = "custom-network1"
   mtu          = 1460
