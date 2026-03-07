@@ -62,7 +62,7 @@ variable "drain_nat_ips" {
 
 variable "network" {
   type        = string
-  description = "VPN name, only if router is not passed in and is created by the module."
+  description = "VPN name, only if router is being created by the module."
   default     = ""
 }
 
@@ -79,7 +79,7 @@ variable "router" {
 
 variable "router_asn" {
   type        = string
-  description = "Router ASN, only if router is not passed in and is created by the module."
+  description = "Router ASN, only if create_router is true."
   default     = "64514"
 }
 

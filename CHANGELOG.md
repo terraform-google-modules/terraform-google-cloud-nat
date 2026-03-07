@@ -6,6 +6,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 Releases are automated via [Conventional Commit](https://www.conventionalcommits.org/) messages.
 
+## [7.0.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v6.0.0...v7.0.0) (2026-02-11)
+
+
+### ⚠ BREAKING CHANGES
+
+* make module ADC compliant ([#192](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/192))
+
+### Features
+
+* make module ADC compliant ([#192](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/192)) ([561e872](https://github.com/terraform-google-modules/terraform-google-cloud-nat/commit/561e87287dd87388549603c11717c3ce1aa4f35b))
+
 ## [6.0.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v5.4.0...v6.0.0) (2026-01-17)
 
 
