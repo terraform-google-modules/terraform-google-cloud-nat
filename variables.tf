@@ -165,3 +165,17 @@ variable "rules" {
   }))
   default = []
 }
+
+variable "source_subnetwork_ip_ranges_to_nat64" {
+  type        = string
+  description = "Specify the NAT64 option for which source subnetworks' IPv6 ranges are advertised via NAT64. Valid values are: ALL_IPV6_SUBNETWORKS, LIST_OF_IPV6_SUBNETWORKS. If set to LIST_OF_IPV6_SUBNETWORKS, nat64_subnetworks must also be specified. Note that if this is set to ALL_IPV6_SUBNETWORKS, no other Cloud NAT in the same region may also enable NAT64."
+  default     = null
+}
+
+variable "nat64_subnetworks" {
+  description = "Specifies one or more subnetworks whose IPv6 ranges should be translated via NAT64. Only used when source_subnetwork_ip_ranges_to_nat64 is set to LIST_OF_IPV6_SUBNETWORKS."
+  type = list(object({
+    name = string
+  }))
+  default = []
+}

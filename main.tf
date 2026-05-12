@@ -64,8 +64,9 @@ resource "google_compute_router_nat" "main" {
   tcp_established_idle_timeout_sec    = var.tcp_established_idle_timeout_sec
   tcp_transitory_idle_timeout_sec     = var.tcp_transitory_idle_timeout_sec
   tcp_time_wait_timeout_sec           = var.tcp_time_wait_timeout_sec
-  enable_endpoint_independent_mapping = var.enable_endpoint_independent_mapping
-  enable_dynamic_port_allocation      = var.enable_dynamic_port_allocation
+  enable_endpoint_independent_mapping  = var.enable_endpoint_independent_mapping
+  enable_dynamic_port_allocation       = var.enable_dynamic_port_allocation
+  source_subnetwork_ip_ranges_to_nat64 = var.source_subnetwork_ip_ranges_to_nat64
 
   dynamic "subnetwork" {
     for_each = var.subnetworks
@@ -73,6 +74,13 @@ resource "google_compute_router_nat" "main" {
       name                     = subnetwork.value.name
       source_ip_ranges_to_nat  = subnetwork.value.source_ip_ranges_to_nat
       secondary_ip_range_names = contains(subnetwork.value.source_ip_ranges_to_nat, "LIST_OF_SECONDARY_IP_RANGES") ? subnetwork.value.secondary_ip_range_names : []
+    }
+  }
+
+  dynamic "nat64_subnetwork" {
+    for_each = var.nat64_subnetworks
+    content {
+      name = nat64_subnetwork.value.name
     }
   }
 
