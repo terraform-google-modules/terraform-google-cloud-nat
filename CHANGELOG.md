@@ -6,6 +6,18 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 Releases are automated via [Conventional Commit](https://www.conventionalcommits.org/) messages.
 
+## [7.1.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v7.0.0...v7.1.0) (2026-09-14)
+
+
+### Features
+
+* **deps:** Update Terraform google to v8 ([#202](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/202)) ([7837db0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/commit/7837db00b602cd845ed0e9fabe0337cc5c1b09c5))
+
+
+### Bug Fixes
+
+* Add effectiveTcpTimeWaitTimeoutSec to TestAdvanced.json ([#203](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/203)) ([85cf4dc](https://github.com/terraform-google-modules/terraform-google-cloud-nat/commit/85cf4dcff05f4866242566e7c17018179b07b7bd))
+
 ## [7.0.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v6.0.0...v7.0.0) (2026-02-11)
 
 
