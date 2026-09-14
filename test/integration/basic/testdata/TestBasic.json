@@ -1,5 +1,6 @@
 {
   "autoNetworkTier": "PREMIUM",
+  "effectiveTcpTimeWaitTimeoutSec": 120,
   "enableDynamicPortAllocation": false,
   "enableEndpointIndependentMapping": false,
   "endpointTypes": [

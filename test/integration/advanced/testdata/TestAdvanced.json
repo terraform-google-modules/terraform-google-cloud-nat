@@ -1,4 +1,5 @@
 {
+  "effectiveTcpTimeWaitTimeoutSec": 240,
   "enableDynamicPortAllocation": false,
   "enableEndpointIndependentMapping": false,
   "endpointTypes": [
