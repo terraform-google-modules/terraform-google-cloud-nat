@@ -56,9 +56,11 @@ spec:
       - name: min_ports_per_vm
         description: Minimum number of ports allocated to a VM from this NAT config. Defaults to 64 if enable_dynamic_port_allocation is false, 32 if true. Changing this forces a new NAT to be created.
         varType: string
+        defaultValue: null
       - name: max_ports_per_vm
         description: Maximum number of ports allocated to a VM from this NAT. This field can only be set when enableDynamicPortAllocation is enabled.This will be ignored if enable_dynamic_port_allocation is set to false.
         varType: string
+        defaultValue: null
       - name: name
         description: Defaults to 'cloud-nat-RANDOM_SUFFIX'. Changing this forces a new NAT to be created.
         varType: string
