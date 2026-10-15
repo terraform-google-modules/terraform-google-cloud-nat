@@ -6,6 +6,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/) and this
 project adheres to [Semantic Versioning](http://semver.org/).
 Releases are automated via [Conventional Commit](https://www.conventionalcommits.org/) messages.
 
+## [7.1.1](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v7.1.0...v7.1.1) (2026-10-15)
+
+
+### Bug Fixes
+
+* populate null defaultValue in cloud-nat blueprint metadata ([#205](https://github.com/terraform-google-modules/terraform-google-cloud-nat/issues/205)) ([350e58b](https://github.com/terraform-google-modules/terraform-google-cloud-nat/commit/350e58b6b58ea30bdfbfd226e94c449b741f0e0a))
+
 ## [7.1.0](https://github.com/terraform-google-modules/terraform-google-cloud-nat/compare/v7.0.0...v7.1.0) (2026-09-14)
 
 
