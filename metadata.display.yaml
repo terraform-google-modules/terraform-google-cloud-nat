@@ -94,7 +94,6 @@ spec:
         source_subnetwork_ip_ranges_to_nat:
           name: source_subnetwork_ip_ranges_to_nat
           title: Source Subnetwork Ip Ranges To Nat
-          level: 1
           enumValueLabels:
             - label: All subnetworks, all IP ranges
               value: ALL_SUBNETWORKS_ALL_IP_RANGES
@@ -102,6 +101,7 @@ spec:
               value: ALL_SUBNETWORKS_ALL_PRIMARY_IP_RANGES
             - label: Custom list of subnetworks
               value: LIST_OF_SUBNETWORKS
+          level: 1
         subnetworks:
           name: subnetworks
           title: Subnetworks
